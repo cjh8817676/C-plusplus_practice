@@ -1,0 +1,16 @@
+Stonewt(double lbs);  //template for bouble-to-Stonewt conversion
+Stonewt myCat;
+myCat = 19.6    我們可以將數值轉換成物件，只要該類別的"建構函數"只有一個引數，且沒有關閉該功能就可以使用
+
+
+那麼，可以進行反轉換嗎???   答案是可以的。
+但不是使用建構函數，要達成反轉換需要使用特殊C++運算子函數格式
+
+Stonewt wolfe(285.7)
+double host = double (wolfe); //syntax 1
+double host = (double) wolfe; //syntax 2
+
+要達成上述功能需要 產生"轉換函數"
+1.operator int() const;
+2.operator double() const;
+可以將Stonewt物件轉換成 1.int 和 2.double型態

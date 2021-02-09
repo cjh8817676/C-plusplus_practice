@@ -1,0 +1,35 @@
+請先學會"運算子多載"的概念
+類別多載運算子通常都需要兩個引數
+Ex:     Time weeding(4, 35);
+        Time waxing(2, 47);
+        Time total;
+        Time adjusted;
+        Time adjusted;
+        total = weeding + waxing;   // use operator+()
+        adjusted = total * 1.5;      // use operator*()
+
+operator+():Time類別的加減法 都結合2個Time值  
+
+operator*():但是乘法卻是Time類別 與 double值(adjusted = total * 1.5;)
+也就是說會有
+第一種情況:
+A = B * 2.75;         //可行
+A = B.operator*(2.75);//可行
+A = 2.75 * B;         //不可行， Time物件要在左邊才會有用啊!!!!!!!! "所以不能置換呼叫"  容易出錯
+
+------------------------------------------------------------------------------------------------
+解決方案: (多載 運算子函數)
+
+另同時存在
+        |1. Time operator*(double n) const;  (成員函數)   |
+        |2. friend Time operator*(double m, const Time & t)   (非成員函數) | ( 有2個operator*()但引數不同-->(運算子函數的多載) )
+
+非成員函數在使用時不能直接存取類別的私有資料(const Time &t抓不到物件的hours、minute資料)
+
+
+解答: 利用特殊的非成員函數，稱""夥伴""，可以存取類別的私有成員!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+這樣
+A = B * 2.75;        
+A = 2.75 * B;      就都可行了
+
+

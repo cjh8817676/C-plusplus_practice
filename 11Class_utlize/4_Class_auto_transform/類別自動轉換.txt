@@ -1,0 +1,76 @@
+(class)類別自動轉換  與 型態轉換
+
+前面提到，向量有種表示法分為"直角坐標"以及"極座標"
+
+Ex: shove為一Vector類別  
+--------------------------------------------------------------------
+using VECTOR::Vector; 
+
+    Vector shove = Vector(100,300);
+    cout << shove <<endl;
+    shove.polar_mode();// 調成"極座標"模式  (!!!!手動轉換 型態)
+    cout << shove << "after change to pol" << endl;
+--------------------------------------------------------------------
+但是能不能 令物件 (自動轉換)其 "型態"呢?????????(Class_auto_transform)
+
+首先看看C++如何處理內建型態的轉換:
+------------------------------------------------------------------------------------------
+//C++自動"型態轉換"例子
+long count = 8;       //int value 8 converted to type long
+bouble time =11.1;    //
+int side = 3.33;      //double value 3.33 converted to type (int 3)  !!喪失精確度
+int *p = 10           //type clash 型態不相容，C++不會自動轉換 (這個敘述會失敗)
+當自動轉換失敗，可以使用:
+int *p = (int *)10    //it's ok (將"10" (型態) 轉換成指向int的指標)
+
+Stonewt(double lbs);  //template for bouble-to-Stonewt conversion
+Stonewt myCat;
+myCat = 19.6          //it's ok  (使用 Stonewt(double)建構子  把自動 19.6 轉換成  Stonewt型態 )!!!!!!!!!!!!!!!(重點)
+
+(建構子只有一個引數，才可以作為"轉換函數")
+所以myCat = 19.6 才會合法
+------------------------------------------------------------------------------------------
+
+設計程式可能會定義一個基本型態或是可以相互轉換之類別非常相關的類別，你可以指示C++如何自動執行這種轉換或是藉由"型態轉換"。
+
+我們將以輸出重量為例子:  (1 stone = 14pound)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+實作面向:
+一、首先設計"適當型態"，(基本)上，我們是使用兩種方式(pound amd stone)表示一件事情的重量。
+
+二、 輸入:不管選擇何種建構方式，都一定會得到stone、pds_left與pounds這三種成員變數的結果。
+----------------------------------------------------------------------------
+    Stonewt(double lbs);          // constructor for double pounds
+    Stonewt(int stn, double lbs); // constructor for stone, lbs
+
+Stonewt::Stonewt(double lbs)
+{
+    stone = int (lbs) / Lbs_per_stn;    // integer division
+    pds_left = int (lbs) % Lbs_per_stn + lbs - int(lbs);
+    pounds = lbs;
+}
+
+// construct Stonewt object from stone, double values
+Stonewt::Stonewt(int stn, double lbs)
+{
+    stone = stn;
+    pds_left = lbs;
+    pounds =  stn * Lbs_per_stn +lbs;
+}
+
+----------------------------------------------------------------------------
+三、輸出
+----------------------------------------------------------------------------
+    void show_lbs() const;        // show weight in pounds format
+    void show_stn() const;        // show weight in stone format
+----------------------------------------------------------------------------
+
+結論:   !!!!!!!!!!!!!!!!!!
+就是以 建構函數(單個引數)  當作自動的型態"轉換函數"。(實際轉換函數在下一個主題)
+但是自動轉換並不一定都是好的結果
+
+所以可以在函數前面加上 "explicit"
+explicit Stonewt(double lbs);  (關閉 "隱含式"轉換) [Stonewt incognito = 275; 不再被允許] 
+~~~~~~~^
+ 

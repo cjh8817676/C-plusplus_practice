@@ -1,0 +1,38 @@
+舉向量來說:
+
+向量   1.直角坐標   <x,y>
+       2. 徑度     r <theta
+
+將2種表示法置於 類別描述當中。
+
+
+以向量為例的實作面向 : 
+
+在 建構子當中，多一個參數為"狀態成員(State member)"
+"Mode form" 就是為"狀態成員" (Mode為enum 類別)
+
+Vector::Vector(double n1, double n2, Mode form)
+    {
+        mode = form;
+        if (form == RECT)     ///以直角坐標表示
+         {
+             x = n1;
+             y = n2;
+             set_mag();
+             set_ang();
+        }
+        else if (form == POL)    ///以極坐標表示
+        {
+             mag = n1;
+             ang = n2 / Rad_to_deg;
+             set_x();
+             set_y();
+        }
+        else
+        {
+             cout << "Incorrect 3rd argument to Vector() -- ";
+             cout << "vector set to 0\n";
+             x = y = mag = ang = 0.0;
+             mode = RECT;
+        }
+    }
