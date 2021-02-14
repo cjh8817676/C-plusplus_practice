@@ -1,0 +1,41 @@
+StringBad sailor = sports;  在初始化時使用的是---->隱含式 複製建構函數
+
+一開始編譯器 產生的 複製建構函數 (只複製值)。------------------------------------>>
+                                                                               |
+StringBad sports("Spinach Leaves Bowl for Dollars");                           |
+StringBad sailor = sports; //(可以想成  兩個指標指向同個記憶體的感覺)             |
+                                                                               |  
+sports 在使用建構函數new出來的str所在記憶體位址， 也被sailor所參考。<<<<<<<<<<<<<<<ˇ
+像是以下範例:
+--------------------------
+sailor.str = sports.str;
+sailor.len = sports.len;
+--------------------------
+
+明確 複製建構函數:
+
+(在strngbad.h 多明確定義一個 copy constructor)
+所以我們要用 明確複製結構函數 (Explicitly copy constructor ):(這方法被稱作"深層複製") 
+
+在 StringBad sailor = sports的時候， 讓sailor也能""自己配置其他的記憶體，不是和sports物件參考同一個記憶體位址的資料""。
+--------------------------------------------------------------------------
+複製建構函數的 原型:  所以可以客製化。
+Class_name(const Class_name &);
+EX:
+StringBad(const StringBad &);       (.h標頭檔裡)
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+StringBad::StringBad(const StringBad & st)   //copy constructor
+{
+    len = st.len;             // set size
+    str = new char[len + 1];          // allot storage   (+1是包含字串的作後一個都是NULL)
+    std::strcpy(str, st.str);              // initialize pointer
+    num_strings++;                    // set object count
+    cout << num_strings << ": \"" << str
+         << "\" object created\n";    // For Your Information
+}                                   (.cpp檔案裡)
+--------------------------------------------------------------------------
+
+結論: 
+    若是類別包含用new初始化指標成員， 則需定義其 複製建構函數 複製指標所指的資料， 而不是複製指標本身。(稱為深層複製)
+    

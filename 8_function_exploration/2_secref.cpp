@@ -13,7 +13,7 @@ int main()
     cout << ", rodents address = " << &rodents << endl;
 
     int bunnies = 50;
-    rodents = bunnies;       // can we change the reference?   no    //reference «ü¦V¯S©wÅÜ¼Æ«á´N¤£·|¦A§ïÅÜ"¦ì§}"¤F  
+    rodents = bunnies;       // can we change the reference?   no    
     cout << "bunnies = " << bunnies;
     cout << ", rats = " << rats;
     cout << ", rodents = " << rodents << endl;
@@ -21,7 +21,7 @@ int main()
     cout << "bunnies address = " << &bunnies;
     cout << ", rodents address = " << &rodents << endl;
     cout << "rats = " << rats;
-    cout << "rodents = bunnies ¥u·|§ïÅÜrodents«ü¦Vªº°O¾ĞÅéªº¼Æ­È¡A¦ırodentsªº°O¾ĞÅé¦ì§}¨Ã¤£·|¦]¦¹§ïÅÜ";
+    cout << "rodents = bunnies"; //é›–ç„¶rodentå¾—å…§å®¹æ”¹è®Šï¼Œä½†æ˜¯åƒè€ƒçš„è¨˜æ†¶é«”ä½å€ä¸è®Š
     // cin.get();
     return 0; 
 }

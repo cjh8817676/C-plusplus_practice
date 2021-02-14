@@ -5,23 +5,23 @@ int main()
 
     int rats = 101;
     int *pt = &rats;
-    int & rodents = *pt;  // referemce ﹍てパパ*ptㄏㄤreferencerats
+    int & rodents = *pt;  // reference 把σ 夹
     int bunnies = 50;
 
     cout << "rats address: " << &rats << endl;
     cout << "pt value " << pt << endl;
     cout << "rodents address :" << &rodents << endl;
-    cout << "rodents 计 :" << rodents << endl;
+    cout << "rodents content :" << rodents << endl;
     cout << "bunnies address :" << &bunnies << endl;
-    pt = &bunnies;        // 钡帝ptэΘbunniesぃ穦э跑rodents┮referencerats
+    pt = &bunnies;        
 
     cout << "after (pt = &bunnies;) rodents address :" << &rodents<< endl;
-    cout << "after (pt = &bunnies;) rodents 计 :" << rodents<<endl;
+    cout << "after (pt = &bunnies;) rodents ???V????r :" << rodents<<endl;
 
     rodents = bunnies;
 
     cout << "after (rodents = bunnies;) rodents address :" << &rodents<< endl;
-    cout << "after (rodents = bunnies;) rodents 计 :" << rodents;
+    cout << "after (rodents = bunnies;) rodents ???V????r :" << rodents;
 
 
 

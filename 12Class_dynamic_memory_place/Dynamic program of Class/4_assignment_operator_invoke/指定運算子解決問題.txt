@@ -1,0 +1,39 @@
+前面看到
+----------------------------------------------------------------
+StringBad sports("Spinach Leaves Bowl for Dollars");
+StringBad sailor = sports;  //我們將一個物件指定給另一個物件，c++就會透過 複製建構函數(copy constructor)]。
+
+但其實很直覺的也能想到用 operator=() 來解決這個問題。
+----------------------------------------------------------------
+但在初始化的時候，不一定會用到指定運算子!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!(注意)
+StringBad sailor = sports; //use copy constructor , possibly assignment, too
+                           我們也能直覺地想到用 運算子多載解解決 該問題。
+                           !!!但是這時還是不能忽略 隱含式 見構函數的存在
+                           就算設計好operator=() 
+                           
+但在這裡主要是解決另一個問題(與初始化不太一樣):
+        StringBad knot;       //跟之前不一樣。這個雖然會使num_strings ++ 因為使用 (預設建構函數)而不是 (複製 建構函數)
+        knot = headline1;     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!(問題點)
+        在這裡雖 num_strings 有++， 但是在 knot = headline1; 之後
+        遇到跟之前一樣的問題，knot 與 headline1 會參考相同物件，這樣子在做delete的時候，解構其中一個會令其他受影響!!!!(重點)
+所以我們要指定運算子，改善此問題。
+        
+運算子的原形如下:
+----------------------------------------------------------------
+StringBad & operator=(const StringBad & st);           (.h裡)
+----------------------------------------------------------------
+----------------------------------------------------------------
+Class_name & Class_name::opertor=(const Class_name & name);
+EX:
+StringBad  & StringBad::operator=(const StringBad & st)    (.cpp裡)
+{
+    if (this == &st)              //objected assigned to itself
+        return *this;             //all done
+    delete [] str;                //free old string 
+    len = st.len;
+    str = new char [len + 1];     //get space for new string
+    std::strcpy(str,st.str);      //copy the string
+    return *this;                 //return reference to invoking object
+}
+----------------------------------------------------------------
+
