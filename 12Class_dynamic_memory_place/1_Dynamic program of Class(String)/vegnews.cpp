@@ -40,7 +40,6 @@ int main()
     cout << "End of main()\n";    //會沒執行到這是因為"編譯器"的問題，較新的"編譯器"在顯示還剩-1個物件的情況下終止程式
                                   //這個機制稱為(GPF)General Protection Fault: 代表的是有一個程式想要存取不屬於他的記憶體空間。
                                   
-    /*提示: 想執行完該程式，把call by value 的部分刪掉或都改成 call by reference就可以*/
     /*物件的 delete順序 與 new的順序  是相反的， 因為適用Stack去裝的*/
     /*所以最先被delete的物件是  knots 、 sailor 、spot 、headline2 、 headline1*/
     // std::cin.get();

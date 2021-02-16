@@ -1,0 +1,35 @@
+物件 動態記憶體配置 見構函數注意事項:
+
+1.若在建構函數中用new初始化指標成員，在解構函數就必須用delete
+2.new 和 delete的方法須相容。 new和delete，以及new[]和delete[]要成對使用。
+3.若有多個建構子(包括複製 建構子)，使用new的方式必須相同。 即全部有中括號，或全部沒有中括號。 因為只有一個解構函數。
+
+!!
+4.應定義 "複製建構函數" ，將一個物件初始化成另一個物件時，需做到 "深層複製"
+-----------------------------------------------------------------------------------
+String::String(const String & st)    // construct String from C string
+{
+    len = std::strlen(s);          // set size
+    str = new char[len + 1];       // allot storage
+    std::strcpy(str, s);           // initialize pointer
+    num_strings++;                 // set object count
+}
+-----------------------------------------------------------------------------------
+!!!
+5.應定義 "指頂運算子"，將一個物件 複製到另一個物件時，也須做 "深層複製"
+-----------------------------------------------------------------------------------
+String & String::operator=(const String & st)
+{
+    if (this == &st)
+        return *this;
+    delete [] str;
+    len = st.len;
+    str = new char[len + 1];
+    std::strcpy(str, st.str);
+    return *this;
+}
+-----------------------------------------------------------------------------------
+
+
+
+

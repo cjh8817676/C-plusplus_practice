@@ -30,7 +30,7 @@ int main()
         cout << "sailor: " << sailor << endl;
         cout << "Assign one object to another:\n";
         StringBad knot;        //有建構自己的 記憶體空間 ，所以已經有num_string ++           
-        knot = headline1;      //再複製內容 
+        knot = headline1;      //只複製內容 ， 並沒有完全複製過去 ， 以避免 knot 與 headline 參考同一個位址。 
         cout << "knot: " << knot << endl; 
         cout << "Exiting the block.\n";
     }

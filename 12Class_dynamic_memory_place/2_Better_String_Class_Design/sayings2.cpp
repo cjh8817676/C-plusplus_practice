@@ -4,12 +4,13 @@
 #include <cstdlib>      // (or stdlib.h) for rand(), srand()
 #include <ctime>        // (or time.h) for time()
 #include "string1.h"
+#include "string1.cpp"
 const int ArSize = 10;
 const int MaxLen = 81;
 int main()
 {
     using namespace std;
-    String name;
+    String name; 
     cout <<"Hi, what's your name?\n>> ";
     cin >> name;
 
@@ -39,7 +40,7 @@ int main()
 
     // use pointers to keep track of shortest, first strings
         String * shortest = &sayings[0]; // initialize to first object
-        String * first = &sayings[0];
+        String * first = &sayings[0];    //to point a object is already exist
         for (i = 1; i < total; i++)
         {
             if (sayings[i].length() < shortest->length())
@@ -53,7 +54,7 @@ int main()
         srand(time(0));
         int choice = rand() % total; // pick index at random
     // use new to create, initialize new String object
-        String * favorite = new String(sayings[choice]);
+        String * favorite = new String(sayings[choice]);            //!!!!!!produce new object
         cout << "My favorite saying:\n" << *favorite << endl;
         delete favorite;
     }

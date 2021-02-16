@@ -2,6 +2,7 @@
 // compile with string1.cpp
 #include <iostream>
 #include "string1.h" 
+#include "string1.cpp"
 const int ArSize = 10;
 const int MaxLen =81;
 int main()
