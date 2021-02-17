@@ -23,12 +23,12 @@ int main()
         callme1(headline1);                     //call by reference
         cout << "headline1: " << headline1 << endl;
         cout << "注意------" << endl;
-        callme2(headline2);                      //call by value 會出問題(若是不知道為甚麼會出問題，以後就盡量使用call by reference就沒事了)
+        callme2(headline2);        /*問題3*/    //call by value 會出問題(若是不知道為甚麼會出問題，以後就盡量使用call by reference就沒事了)
         cout << "headline2: " << headline2 << "   出現奇怪的字串內容(被刪掉了)" << endl;
         cout << "注意^^^^^^" << endl;
         cout << "Initialize one object to another:\n";
-        StringBad sailor = sports;     //將sports用於"初始化"sailor(物件的初始化可以直接使用其他物件)，但是num_strings 沒有++
-                                        //因為是將sports的資料複製過去的。
+        StringBad sailor = sports;  /*問題4*/   //將sports用於"初始化"sailor(物件的初始化可以直接使用其他物件)，但是num_strings 沒有++
+                                        //因為只是將sports的資料複製過去的。
         cout << "sailor: " << sailor << endl;
         cout << "Assign one object to another:\n";
         StringBad knot;         //這個雖然會使num_strings ++

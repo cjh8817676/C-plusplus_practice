@@ -48,9 +48,19 @@ int main()
     delete pc2;           // free Heap1         
     delete pc4;           // free Heap2
 // explicitly destroy placement new objects
+/*這裡會發現 pc1、pc3與 pc2、pc4 的解構方式不一樣， 除了前面提到的 new 跟 delete 與 new[] delete[] 的成對使用
+   但為甚麼不使用 delete []pc3、delete []pc1呢??  而需要明確呼叫解構函數???
+   這是因為  雖然 new 跟 delete 可以一起使用，  但不包括"定位放置new"，因為C++沒有"定位釋放delete"，所以只好明確呼叫解構函數 
+   一般 delete 對 "定位放置new" 不會有任何影響
+   還要注意  delete 的順序要跟 new 相反， 不管有沒有定位(指定記憶體位置)*/
+
+    //delete pc3;             
+    //delete pc1;
+    //delete []pc3;                 
+    //delete []pc1;
     pc3->~JustTesting();  // destroy object pointed to by pc3
     pc1->~JustTesting();  // destroy object pointed to by pc1
-    delete [] buffer;     // free buffer
+    delete [] buffer;     // free buffer   不再只是單純釋放掉原來的buffer
     // std::cin.get();
     return 0;
 }

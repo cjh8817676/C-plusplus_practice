@@ -22,7 +22,7 @@ int main()
 
     JustTesting *pc1, *pc2;
 
-    pc1 = new (buffer) JustTesting;      // place object in buffer
+    pc1 = new (buffer) JustTesting;      // place object in buffer  我們用new把該物件放入指定的buffer記憶體區塊
     pc2 = new JustTesting("Heap1", 20);  // place object on heap
     
     cout << "Memory block addresses:\n" << "buffer: "

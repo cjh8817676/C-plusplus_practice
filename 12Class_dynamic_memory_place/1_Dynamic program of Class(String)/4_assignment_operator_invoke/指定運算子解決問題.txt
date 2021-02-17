@@ -1,5 +1,5 @@
-前面看到
 ----------------------------------------------------------------
+前面看到
 StringBad sports("Spinach Leaves Bowl for Dollars");
 StringBad sailor = sports;  //我們將一個物件指定給另一個物件，c++就會透過 複製建構函數(copy constructor)]。
 
@@ -8,7 +8,7 @@ StringBad sailor = sports;  //我們將一個物件指定給另一個物件，c+
 但在初始化的時候，不一定會用到指定運算子!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!(注意)
 StringBad sailor = sports; //use copy constructor , possibly assignment, too
                            我們也能直覺地想到用 運算子多載解解決 該問題。
-                           !!!但是這時還是不能忽略 隱含式 見構函數的存在
+                           !!!但是這時還是不能忽略 隱含式 建構函數的存在
                            就算設計好operator=() 
                            
 但在這裡主要是解決另一個問題(與初始化不太一樣):

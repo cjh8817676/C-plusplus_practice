@@ -17,9 +17,9 @@ sailor.len = sports.len;
 (在strngbad.h 多明確定義一個 copy constructor)
 所以我們要用 明確複製結構函數 (Explicitly copy constructor ):(這方法被稱作"深層複製") 
 
-在 StringBad sailor = sports的時候， 讓sailor也能""自己配置其他的記憶體，不是和sports物件參考同一個記憶體位址的資料""。
+在 StringBad sailor = sports的時候， 讓sailor也能""自己配置其他的記憶體，不是和sports物件參考同一個記憶體位址的物件資料""。
 --------------------------------------------------------------------------
-複製建構函數的 原型:  所以可以客製化。
+複製建構函數的 原型:  有原型所以可以客製化。
 Class_name(const Class_name &);
 EX:
 StringBad(const StringBad &);       (.h標頭檔裡)

@@ -2,6 +2,8 @@
 
 Class_Name Object_Name;  (String name;)
 
+////////////////////////////////////////////////////////
+
 現在我們在物件(Object)用 new與delete。:
 --------------------------------------------------------
 String * favorite = new String(saying[choice]);
@@ -16,3 +18,19 @@ String * favorite = new String(saying[choice]);
 
 delete favorite;
 當不需要此物件時，程式利用delete刪除。
+
+--------------------------------------------------------
+String * glamour; //宣告物件指標
+
+String * first = &sayings[0]; // 初始化指標指向現有的物件
+
+String *favorite = new String(saying[choice]) // 用new 初始化指標，這會""""產生新的物件""""。
+
+用new 產生類別物件會呼叫適當的 建構函數 初始化剛產生的物件
+
+String *gleep = new String; //
+
+String *glop = new String("my my my");// invoke the String(const char *) constructor
+
+String * favorite = new String(saying[choice]); 
+//invoke the String(const String &) constructor (copy constructor)

@@ -1,0 +1,25 @@
+我們之前使用new，都是系統指定的。
+
+
+現在有了  定放位置(placement)new允許我們以 ""指定記憶體的位置"" 的方式來指定記憶體空間
+          在一般不指定記憶體位置的new，都會將變數放置在heap裡面。
+
+----------------------------------------------------------------
+EX:
+char * buffer = new char[BUF];       // get a block of memory
+JustTesting *pc1;
+pc1 = new (buffer) JustTesting;      // place object in buffer  我們用new把該物件放入指定的buffer記憶體區塊
+JustTesting *pc3;
+pc3 = new (buffer) JustTesting("Bad Idea", 6);
+
+第一行: 先規畫一個記憶體區塊   (嵌入式系統很多這種。)
+第二、三行: 把一個JustTesting的物件丟入這個記憶體區塊
+第四、五行: 把一個JustTesting的物件丟入這個記憶體區塊，把第二、三行原本的資料給覆蓋過去。
+----------------------------------------------------------------
+
+若是一開始的物件不想要被其他物件覆蓋過去，可以提供一個 (記憶體位移量)  !!!!!!!!!!!!
+--------------------------------------------------------------------
+JustTesting *pc3;
+pc3 = new (buffer + sizeof (JustTesting)) JustTesting("Bad Idea", 6); 
+//用new把該物件放入指定的(buffer + sizeof (JustTesting))記憶體區塊
+---------------------------------------------------------------------
