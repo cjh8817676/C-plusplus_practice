@@ -1,0 +1,22 @@
+衍生的類別無法直接存取基礎類別的私有成員
+他必須透過基礎類別的成員函數
+
+例如: RatedPlayer 建構函數不能直接指定繼承的成員(firstname、lastname、和hastable)。
+      RatedPlayer 必須使用"公用基礎類別的成員函數"，以存取私有的基礎類別成員。
+      尤其 衍生類別(RatedPlayer)的建構函數，必須使用基礎類別的建構函數
+
+衍生類別重點: 
+1.先建構基礎類別  (否則該衍生類別會使用 預設建構函數)
+2.衍生類別的 建構函數 應透過 "成員初始串列"，傳遞 基礎類別 的資訊至基礎類別的 建構函數。
+3.衍生類別的 建構函數 應初始化新增至衍生類別的資料成員
+
+
+"成員初始串列" -->: TableTennisPlayer(fn, ln, ht)  
+RatedPlayer為TableTennisPlayer的衍生類別。//宣告時(.cpp裡)RatedPlayer的建構函數必須藉由TableTennisPlayer的建構函數
+------------------------------------------------------------------------
+RatedPlayer::RatedPlayer(unsigned int r, const string & fn,
+     const string & ln, bool ht) : TableTennisPlayer(fn, ln, ht)  
+{                               /*^^^^^^^^成員初始串列^^^^^^^^^*/ 
+    rating = r;
+}
+------------------------------------------------------------------------

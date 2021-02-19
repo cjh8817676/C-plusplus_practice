@@ -20,6 +20,7 @@ long count = 8;       //int value 8 converted to type long
 bouble time =11.1;    //
 int side = 3.33;      //double value 3.33 converted to type (int 3)  !!喪失精確度
 int *p = 10           //type clash 型態不相容，C++不會自動轉換 (這個敘述會失敗)
+////////////////////
 當自動轉換失敗，可以使用:
 int *p = (int *)10    //it's ok (將"10" (型態) 轉換成指向int的指標)
 

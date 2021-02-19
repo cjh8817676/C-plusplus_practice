@@ -11,7 +11,7 @@ String * favorite = new String(saying[choice]);
 delete favorite;
 --------------------------------------------------------
 
-String * favorite = new String(saying[choice]);
+String * favorite = new String(saying[choice]); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 不只配置名稱字串的空間，還包括物件，也就是說包括儲存字串位址的str指標和len "成員的空間"
 (但不會配置static 變數的空間。)
 而且在產生物件的時候會呼叫 建構函數。
