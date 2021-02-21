@@ -72,6 +72,9 @@ Stonewt::Stonewt(int stn, double lbs)
 但是自動轉換並不一定都是好的結果
 
 所以可以在函數前面加上 "explicit"
-explicit Stonewt(double lbs);  (關閉 "隱含式"轉換) [Stonewt incognito = 275; 不再被允許] 
+explicit Stonewt(double lbs);  (關閉 "隱含式"轉換) 
 ~~~~~~~^
+
+Stonewt incognito = 275; // 加上 explicit 不再被允許
+Stonewt incognito = Stonewt(275); // 加上 explicit ，明確的轉換仍然被允許 
  

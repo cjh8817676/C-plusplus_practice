@@ -22,8 +22,8 @@ int main()
         cout << "sports: " << sports << endl;
         callme1(headline1);                     //call by reference
         cout << "headline1: " << headline1 << endl;
-        callme2(headline2);                      //call by value  //初始化不一定會用copy constructor或是 指定運算子
-                                                                  //但若運氣不好編譯器使用指定運算子，因為裡面沒有num_string++
+        callme2(headline2);                      //call by value  //初始化不確定 會使用copy constructor或是 指定運算子
+                                                                  //所以copy constructor和 指定運算子 都要 num_string++
         cout << "headline2: " << headline2 << "   no more strang string" << endl;
         cout << "Initialize one object to another:\n";
         StringBad sailor = sports;     //利用copy constructor

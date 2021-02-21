@@ -2,6 +2,7 @@
 // compile with brass.cpp
 #include <iostream>
 #include "brass.h"
+#include "brass.cpp"
 
 int main()
 {

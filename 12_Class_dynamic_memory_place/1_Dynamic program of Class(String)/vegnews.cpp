@@ -23,17 +23,17 @@ int main()
         callme1(headline1);                     //call by reference
         cout << "headline1: " << headline1 << endl;
         cout << "注意------" << endl;
-        callme2(headline2);        /*問題3*/    //call by value 會出問題(若是不知道為甚麼會出問題，以後就盡量使用call by reference就沒事了)
+        callme2(headline2);        /*問題*/    //call by value 會出問題(若是不知道為甚麼會出問題，以後就盡量使用call by reference就沒事了)
         cout << "headline2: " << headline2 << "   出現奇怪的字串內容(被刪掉了)" << endl;
         cout << "注意^^^^^^" << endl;
         cout << "Initialize one object to another:\n";
-        StringBad sailor = sports;  /*問題4*/   //將sports用於"初始化"sailor(物件的初始化可以直接使用其他物件)，但是num_strings 沒有++
-                                        //因為只是將sports的資料複製過去的。
+        StringBad sailor = sports;  /*問題*/   //將sports用於"初始化"sailor(物件的初始化可以直接使用其他物件)，但是num_strings 沒有++
+                                        //因為只是將sports的資料複製過去的。 !!! (3_Explicitly copy constructor解決)
         cout << "sailor: " << sailor << endl;
         cout << "Assign one object to another:\n";
-        StringBad knot;         //這個雖然會使num_strings ++
-        knot = headline1;       //再C++ 這種處裡方式 會把 headline1 完全 複製過去
-                                //所以可以發現 headline1 、 knot 參考同一個位址的物件阿!!!(在4_assignment_operator_invoke解決)
+        StringBad knot;            //這個雖然會使num_strings ++
+        knot = headline1; /*問題*/ //在C++ 這種處裡方式 會把 headline1 完全 複製過去
+                                  //所以可以發現 headline1 、 knot 參考同一個位址的物件阿!!!(在4_assignment_operator_invoke解決)
         cout << "knot: " << knot << endl; 
         cout << "Exiting the block.\n";
     }

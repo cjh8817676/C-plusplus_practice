@@ -36,9 +36,11 @@ int main ( void )
                                     /*自動產生TableTennisPlayer(const RatedPlayer & tp) [implicit copy constructor]*/
     /*指定運算子 operator=()*/
     /*同樣的，也可將RatedPlayer物件 指定給 TableTennisPlayer基礎物件*/
-    RatedPlayer olaf1(1141, "Pete", "Parker", true);
+    RatedPlayer olaf3(1141, "Pete", "Parker", true);
     TableTennisPlayer winner;
-    winner = olaf1; /*使用的是 隱函式多載的指定運算子*/
+    cout << &olaf1 << endl;
+    cout << &olaf3 << endl; // olaf1、olaf3 是不同的物件喔!!
+    winner = olaf3; /*使用的是 隱函式多載的指定運算子*/
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 

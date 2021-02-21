@@ -1,7 +1,9 @@
 衍生的類別無法直接存取基礎類別的私有成員
 他必須透過基礎類別的成員函數
 
-例如: RatedPlayer 建構函數不能直接指定繼承的成員(firstname、lastname、和hastable)。
+
+例如: RatedPlayer 為 TableTennisPlayer的 衍生類別
+      RatedPlayer 建構函數不能直接指定繼承的成員(firstname、lastname、和hastable)。
       RatedPlayer 必須使用"公用基礎類別的成員函數"，以存取私有的基礎類別成員。
       尤其 衍生類別(RatedPlayer)的建構函數，必須使用基礎類別的建構函數
 

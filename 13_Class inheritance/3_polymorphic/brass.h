@@ -29,9 +29,9 @@ private:
 public:
     BrassPlus(const std::string & s = "Nullbody", long an = -1,
             double bal = 0.0, double ml = 500,
-            double r = 0.11125);
+            double r = 0.11125);     // 產生帳號
     BrassPlus(const Brass & ba, double ml = 500, 
-		                        double r = 0.11125);
+		                        double r = 0.11125);// 產生帳號
     virtual void ViewAcct()const; //顯示帳號資訊，比基礎類別還多的資訊        (polymorphic) 
     virtual void Withdraw(double amt); //提款 ， 比基礎類別新增 欠款上限的判斷(polymorphic)
     void ResetMax(double m) { maxLoan = m; } 

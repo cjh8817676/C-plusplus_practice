@@ -13,7 +13,7 @@ private:
 public:
     baseDMA(const char * l = "null", int r = 0);
     baseDMA(const baseDMA & rs);
-    virtual ~baseDMA();
+    virtual ~baseDMA();  // base class 的解構函數應該要是 虛擬解構函數
     baseDMA & operator=(const baseDMA & rs);
     friend std::ostream & operator<<(std::ostream & os, 
                                      const baseDMA & rs);
@@ -45,9 +45,9 @@ public:
     hasDMA(const char * s = "none", const char * l = "null",
               int r = 0);
     hasDMA(const char * s, const baseDMA & rs);
-    hasDMA(const hasDMA & hs);
+    hasDMA(const hasDMA & hs);  //自訂義 複製建構函數
     ~hasDMA();
-    hasDMA & operator=(const hasDMA & rs);  
+    hasDMA & operator=(const hasDMA & rs);  // 指定運算子
     friend std::ostream & operator<<(std::ostream & os, 
                                      const hasDMA & rs);
 };

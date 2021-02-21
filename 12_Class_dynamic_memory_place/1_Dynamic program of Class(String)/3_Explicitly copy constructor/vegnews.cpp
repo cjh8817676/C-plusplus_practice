@@ -29,7 +29,7 @@ int main()
         cout << "sailor: " << sailor << endl;
         cout << "Assign one object to another:\n";
         StringBad knot;        //有建構自己的 記憶體空間                 
-        knot = headline1;      //再複製內容 
+        knot = headline1;      //再複製內容 ， 但knot、headline1 依然還是參考同一個物件。在delete會出現問題。
         cout << "knot: " << knot << endl; 
         cout << "Exiting the block.\n";
     }

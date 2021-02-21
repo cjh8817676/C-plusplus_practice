@@ -1,0 +1,30 @@
+抽象基礎類別。
+
+前面已學到 簡單的繼承和比較複雜的 同名異式繼承。   
+增加複雜性的下一步是抽象基礎類別(abstract base class，ABC)。
+
+
+只要一個類別， 擁有 "純虛擬函數(pure virtual function)" ， 就會變成 "抽象類別"。
+
+例如:
+------------------------------------------------------------------------------------------
+class BaseEllipse //  abstract base class(抽象 基礎 類別) ， 因為有成員函數是: "純虛擬函數(pure virtual function)" 
+{
+    private:
+        double x;   // x-coordinate of center
+        double y;   // y-coordinate of center
+        ...
+    public:
+        BaseEllipse(double x0 = 0, double y0 = 0) : x(x0),y(y0) {}
+        virtual ~BaseEllipse() {}   //基礎類別建構函數 應為虛擬解構函數
+        void Move (int nx, ny) { x = nx; y=ny ;}
+        virtual double Area() const = 0 ; // a pure virtual function (virtual double Area() const 加上 = 0)       
+}
+------------------------------------------------------------------------------------------
+
+抽象基礎類別: "抽象" "基礎" 類別 也是一種 基礎類別
+
+1.抽象基礎類別 "無法產生物件" !!! (具有純虛擬函數的類別，指會當作 抽象 基礎類別)
+2.在原型中 = 0 會使虛擬函數變成純虛擬函數
+3.要記得: //基礎類別reference 可以參考 衍生類別 的物件!!!!!!!!!!!!!!!!(重點)
+         // 基礎類別指標      可以指向 衍生類別 的物件  !!!!!!!!!!!!!!!!(重點)

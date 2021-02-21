@@ -1,0 +1,60 @@
+在第12章的時候， 在物件的建構函數使用new、delete，都必會牽扯到3個東西。
+1.指定運算子 
+  Class_name & operator=(const Class_name & re);   
+2.複製建構函數 (copy constructor)
+  Class_name(const Class_name & re);
+3.解構函數
+
+在第12章 只有一個類別的動態記憶體配置花了很大心力去重新定義 指定運算子和複製建構函數。
+         現在卻多了 衍生類別 ，情況變得有些複雜
+         
+//////////////////////////////衍生類別的動態記憶體配置////////////////////////////////////////////
+已知有基礎類別、衍生類別。   
+基礎類別 使用動態記憶體配置，並重新定義指定和複製建構函數，對衍生類別有何影響???
+先分為2種情況:
+1.基礎類別(baseDMA) 有new ， 衍生類別(lacksDMA) 沒有使用new
+  一、lacksDMA由於沒有再配置其他記憶體，所以只需要預設的解構函數就好，之後又會再呼叫基礎類別的解構函數。
+  二、lacksDMA 類別的預設複製建構函數(implicity copy constructor)，會繼承(明確)基礎類別的複製建構函數
+  三、lacksDMA 預設指定運算子，會自動使用基礎類別的指定運算子處裡基礎類別的部分。
+
+2.基礎類別(baseDMA) 有new ， 衍生類別(hasDMA)     有使用new
+  一、hasDMA由於有 其他成員 配置其他記憶體，[[所以hasDMA的 解構函數需要"清除掉衍生類別的成員"]]，再呼叫基礎類別的解構函數。
+  二、hasDMA 的複製建構函數只能存取 hasDMA的資料，所以它必須呼叫baseDMA的複製建構函數處裡baseDMA部分的資料。
+  範例:
+--------------------------------------------------------------------------------------------------------------------
+baseDMA::baseDMA(const baseDMA & rs) // copy constructor
+{
+    label = new char[std::strlen(rs.label) + 1];
+    std::strcpy(label, rs.label);
+    rating = rs.rating;
+}
+
+// baseDMA的複製建構子參數是(const baseDMA & rs)，但invoke的時候傳的卻是(const hasDMA & hs)
+// 所以又回想到 基礎類別 的reference或指標 可以參考或指向 衍生類別的物件。
+
+hasDMA::hasDMA(const hasDMA & hs)
+         : baseDMA(hs)  // invoke base class copy constructor    
+{   
+    style = new char[std::strlen(hs.style) + 1];
+    std::strcpy(style, hs.style);
+}
+--------------------------------------------------------------------------------------------------------------------
+  三、因為hasDMA也使用動態記憶體配置，所以也需要明確的指定運算子。這是hasDMA的成員函數，所以只能存取hasDMA的資料
+      然而衍生類別的明確指定運算子，還要照顧繼承的基礎類別baseDMA物件的指定。
+      可以明確地呼叫基礎類別的指定運算子。
+  範例:
+--------------------------------------------------------------------------------------------------------------------
+hasDMA & hasDMA::operator=(const hasDMA & hs)
+{
+    if (this == &hs)
+        return *this;
+    baseDMA::operator=(hs);  // copy base portion
+    delete [] style;         // prepare for new style
+    style = new char[std::strlen(hs.style) + 1];
+    std::strcpy(style, hs.style);
+    return *this;
+}
+    
+--------------------------------------------------------------------------------------------------------------------
+
+

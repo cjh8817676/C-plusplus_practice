@@ -11,7 +11,7 @@ baseDMA::baseDMA(const char * l, int r)
     rating = r;
 }
 
-baseDMA::baseDMA(const baseDMA & rs)
+baseDMA::baseDMA(const baseDMA & rs)  //copy coonstructor
 {
     label = new char[std::strlen(rs.label) + 1];
     std::strcpy(label, rs.label);

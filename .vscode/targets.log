@@ -1,0 +1,339 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.82.90
+# Built for i686-pc-mingw32
+# Copyright (C) 1988-2012 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Sat Feb 20 15:39:34 2021
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
+# automatic
+?F = $(notdir $?)
+# environment
+CommonProgramFiles = C:\Program Files (x86)\Common Files
+# default
+.SHELLFLAGS := -c
+# environment
+cudnn = C:\cudnn
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
+# automatic
+@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
+# environment
+HOMEDRIVE = C:
+# a 
+utomatic
+@F = $(notdir $@)
+# automatic
+^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
+# makefile
+CURDIR := c:/Users/jonat/OneDrive/Desktop/c++_practice
+# default
+SHELL := sh.exe
+# environment
+ProgramFiles(x86) = C:\Program Files (x86)
+# environment
+VSCODE_NLS_CONFIG = {"locale":"zh-tw","availableLanguages":{},"_languagePackSupport":true}
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# makefile
+MAKEFILE_LIST := 
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# environment
+VSCODE_NODE_CACHED_DATA_DIR = C:\Users\jonat\AppData\Roaming\Code\CachedData\622cb03f7e070a9670c94bae1a45d78d7181fbd4
+# environment
+TMP = C:\Users\jonat\AppData\Local\Temp
+# environment
+CUDA_PATH_V11_0 = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+SystemDrive = C:
+# environment
+CommonProgramFiles(x86) = C:\Program Files (x86)\Common Files
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-7f8901a4-f8f1-46a9-aa85-53eb86df620d-sock
+# environment
+VSCODE_CWD = C:\Users\jonat\AppData\Local\Programs\Microsoft VS Code
+# environment
+SystemRoot = C:\Windows
+# environment
+PATH = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;;;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Git\Git\bin;C:\Users\jonat\OneDrive\�ୱ\frp\window;C:\MinGW\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MATLAB\R2018a\runtime\win64;C:\Program Files\MATLAB\R2018a\bin;C:\cmake-3.19.4-win64-x64\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\opencv\build\x64\vc14\bin;C:\src\wget;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1\;C:\Users\jonat\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\jonat\AppData\Local\Programs\Python\Python39\;C:\Users\jonat\AppData\Local\Microsoft\WindowsApps;C:\Users\jonat\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jonat\AppData\Roaming\npm;C:\src\flutter\bin;C:\Users\jonat\.dotnet\tools
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+USERPROFILE = C:\Users\jonat
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+ComSpec = C:\Windows\system32\cmd.exe
+# environment
+VSCODE_LOG_STACK = false
+# environment
+NUMBER_OF_PROCESSORS = 12
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver
+# environment
+NVTOOLSEXT_PATH = C:\Program Files\NVIDIA Corporation\NvToolsExt\
+# environment
+ProgramW6432 = C:\Program Files
+# automatic
+%F = $(notdir $%)
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13700_XEPRTTIUBYCYGKOH
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+COMPUTERNAME = DESKTOP-691CGGN
+# environment
+NVCUDASAMPLES_ROOT = C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.0
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERNAME = jonat
+# environment
+PUBLIC = C:\Users\Public
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+CommonProgramW6432 = C:\Program Files\Common Files
+# environment
+ProgramData = C:\ProgramData
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+LOGONSERVER = \\DESKTOP-691CGGN
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+USERDOMAIN = DESKTOP-691CGGN
+# environment
+MIC_LD_LIBRARY_PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+JAVA_HOME = C:\Program Files\Java\jdk-15.0.2
+# default
+MAKE_VERSION := 3.82.90
+# makefile
+.DEFAULT_GOAL := 
+# environment
+OneDrive = C:\Users\jonat\OneDrive
+# automatic
+%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
+# environment
+JD2_HOME = C:\Users\jonat\AppData\Local\JDownloader 2.0
+# environment
+DriverData = C:\Windows\System32\Drivers\DriverData
+# environment
+LOCALAPPDATA = C:\Users\jonat\AppData\Local
+# default
+MAKE_COMMAND := make.exe
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# environment
+OneDriveConsumer = C:\Users\jonat\OneDrive
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+# environment
+OS = Windows_NT
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\229cd33ae6b326be32fcd37e5b082d7c-1.53.2-main-sock
+# environment
+HOMEPATH = \Users\jonat
+# environment
+PROMPT = $P$G
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
+# environment
+INTEL_DEV_REDIST = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
+# environment
+PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# automatic
++D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
+# environment
+windir = C:\Windows
+# automatic
++F = $(notdir $+)
+# default
+SUFFIXES := 
+# environment
+APPDATA = C:\Users\jonat\AppData\Roaming
+# environment
+TEMP = C:\Users\jonat\AppData\Local\Temp
+# environment
+NVCUDASAMPLES11_0_ROOT = C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.0
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# automatic
+^F = $(notdir $^)
+# environment
+CUDA_PATH = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0
+# environment
+ProgramFiles = C:\Program Files (x86)
+# environment
+SESSIONNAME = Console
+# environment
+PROCESSOR_REVISION = 9e0a
+# default
+.INCLUDE_DIRS = C:/MinGW/include
+# default
+.RECIPEPREFIX := 
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# environment
+VSCODE_PID = 13700
+# environment
+USERDOMAIN_ROAMINGPROFILE = DESKTOP- 
+691CGGN
+# variable set hash-table stats:
+# Load=100/1024=10%, Rehash=0, Collisions=13/116=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# : could not be stat'd.
+# C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp (key C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/libnvvp, mtime 1612728280): 14 files, no impossibilities.
+# C:\Users\jonat\.dotnet\tools: could not be stat'd.
+# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/ 
+Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1612541095): 5 files, no impossibilities.
+# C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1611905197): 33 files, no impossibilities.
+# . (key c:/Users/jonat/OneDrive/Desktop/c++_practice, mtime 1613558344): 13 files, no impossibilities.
+# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1612063981): 5 files, no impossibiliti 
+es.
+# C:\src\flutter\bin (key C:/src/flutter/bin, mtime 1612019007): 8 files, no impossibilities.
+# C:\Users\jonat\AppData\Local\Microsoft\WindowsApps (key C:/Users/jonat/AppData/Local/Microsoft/WindowsApps, mtime 1612727236): 14 files, no impossibilities.
+# C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1608296293): 8 files, no impossibilities.
+# C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin (key C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin, mtime 1612729139):  
+50 files, no impossibilities.
+# C:\Windows\System32\OpenSSH\: could not be stat'd.
+# C:\Users\jonat\AppData\Roaming\npm (key C:/Users/jonat/AppData/Roaming/npm, mtime 1610093003): 18 files, no impossibilities.
+# C:\cmake-3.19.4-win64-x64\bin (key C:/cmake-3.19.4-win64-x64/bin, mtime 1611849809): 7 files, no impossibilities.
+# C:\MinGW\bin (key C:/MinGW/bin, mtime 1611164591): 59 files, no impossibilities.
+# C:\src\wget (key C:/src/wget, mtime 1612703483): 4 files, no impossibilities.
+# C:\Program Files (x86 
+)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1612527096): 10 files, no impossibilities.
+# C:\Users\jonat\AppData\Local\Programs\Python\Python39\ (key C:/Users/jonat/AppData/Local/Programs/Python/Python39/, mtime 1612709675): 19 files, no impossibilities.
+# C:\Users\jonat\AppData\Local\Programs\Python\Python39\Scripts\ (key C:/Users/jonat/AppData/Local/Programs/Python/Python39/Scripts/, mtime 1612709687): 15 files, no impossibilities.
+# C:\Program Files 
+ (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler (key C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler, mtime 1608298303): 17 files, no impossibilities.
+# C:\Windows (key C:/Windows, mtime 1613233218): 110 files, no impossibilities.
+# C:\Program Files\MATLAB\R2018a\bin (key C:/Program Files/MATLAB/R2018a/bin, mtime 1611930218): 22 files, no impossibilities.
+# C:\Users\jonat\OneDrive\�ୱ\frp\window: could not be stat'd.
+# C:\Program Files\Microsoft SQL Ser 
+ver\130\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/130/Tools/Binn/, mtime 1611132914): 4 files, no impossibilities.
+# C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1611905197): 156 files, no impossibilities.
+# C:\Program Files\Git\Git\bin: could not be stat'd.
+# C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1\ (key C:/Program Files/NVIDIA Corporation/Nsight Compute 2020.1.1/, mtime 1612728243): 12 files, no impossibilities.
+# C:\Program Files\Common Files\Oracle\Java\ 
+javapath (key C:/Program Files/Common Files/Oracle/Java/javapath, mtime 1612063494): 6 files, no impossibilities.
+# C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1608296741): 11 files, no impossibilities.
+# C:\opencv\build\x64\vc14\bin (key C:/opencv/build/x64/vc14/bin, mtime 1612672569): 11 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows/system32, mtime 1613473976): 2984 files, no impossibilities.
+# C:\Program Files\dotnet\ (key C:/Program Files/dotnet/, mtime 1612529087):  
+11 files, no impossibilities.
+# C:\Users\jonat\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/jonat/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1613139731): 4 files, no impossibilities.
+# C:\Program Files\MATLAB\R2018a\runtime\win64 (key C:/Program Files/MATLAB/R2018a/runtime/win64, mtime 1611929480): 10 files, no impossibilities.
+
+# 3640 files, no impossibilities in 34 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit 
+ rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a ta 
+rget:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 7 (6) / strings = 3592 / storage = 53809 B / avg = 14 
+ B
+# current buf: size = 8174 B / used = 4817 B / count = 304 / avg = 15 B
+# other used: total = 45635 B / count = 3288 / avg = 13 B
+# other free: total = 52 B / max = 14 B / min = 5 B / avg = 8 B
+
+# strcache performance: lookups = 3682 / hit rate = 2%
+# hash-table stats:
+# Load=3592/8192=44%, Rehash=0, Collisions=1306/3682=35%
+# Finished Make data base on Sat Feb 20 15:39:34 2021
+
+ 
+make.exe: *** No rule to make target 'all'.  Stop.
+ 

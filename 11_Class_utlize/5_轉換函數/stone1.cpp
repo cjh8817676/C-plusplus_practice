@@ -3,11 +3,11 @@
 #include <iostream>
 #include "stonewt1.h"
 #include "stonewt1.cpp"
-
+//1 stone = 14 pounds
 int main()
 {
     using std::cout;
-    Stonewt poppins(9,2.8);     // 9 stone, 2.8 pounds
+    Stonewt poppins(9,2.8);     // 9 stone, 2.8 pounds  = 128.8pounds
     Stonewt poppins2(9,2.8);     // 9 stone, 2.8 pounds
     double p_wt = poppins;      // implicit conversion
     double p_wt_sum = poppins + poppins2;   //poppins + poppins2的結果傳到一個暫時的物件，再把這個暫時的物件轉成double給p_wt_sum

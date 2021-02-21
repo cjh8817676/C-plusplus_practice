@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "acctabc.h"
+#include "acctabc.cpp"
 const int CLIENTS = 4;
 
 int main()
@@ -11,7 +12,7 @@ int main()
    using std::cout;
    using std::endl;
 
-   AcctABC * p_clients[CLIENTS];
+   AcctABC * p_clients[CLIENTS]; //抽象類別 無法產生物件， 但可以做為reference或指標，參考或指向到 衍生類別 
    std::string temp;
    long tempnum;
    double tempbal;

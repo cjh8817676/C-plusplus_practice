@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-// Abstract Base Class
+// Abstract Base Class  (把Brass、BrassPlus 共同的特性 到 抽象類別)
 class AcctABC
 {
 private:
@@ -43,7 +43,7 @@ public:
 };
 
 //Brass Plus Account Class
-class BrassPlus : public AcctABC
+class BrassPlus : public AcctABC    // 參考前面的"同名異式(polymorphic)-brass.h"的範例，BrassPlus 繼承的原本是 Brass
 {
 private:
     double maxLoan;

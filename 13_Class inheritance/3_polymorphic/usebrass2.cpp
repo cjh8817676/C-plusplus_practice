@@ -14,7 +14,7 @@ int main()
 
    Brass * p_clients[CLIENTS]; //利用基礎物件指標，//基礎類別reference 可以參考 衍生類別 的物件!!!!!!!!!!!!!!!!(重點)
                                                  //基礎類別指標      可以指向 衍生類別 的物件  !!!!!!!!!!!!!!!!(重點)
-                              //這個單一陣列中，可以表示一種型態以上(Brass、BrassPlus)的物件集合，這是同名異式(polymorphic)
+                    //這個單一陣列(Brass指標型態)中，可以表示一種型態以上(Brass、BrassPlus)的物件集合，這是同名異式(polymorphic)
    std::string temp;
    long tempnum;
    double tempbal;
@@ -51,7 +51,7 @@ int main()
    cout << endl;
    for (int i = 0; i < CLIENTS; i++)
    {
-       p_clients[i]->ViewAcct();   //這裡使用同名異式(polymorphic)
+       p_clients[i]->ViewAcct();   //這裡使用同名異式(polymorphic)，牽涉到 動態繫結
        cout << endl;
    }
               

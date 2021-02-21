@@ -1,6 +1,7 @@
 Stonewt(double lbs);  //template for bouble-to-Stonewt conversion
 Stonewt myCat;
-myCat = 19.6    我們可以將數值轉換成物件，只要該類別的"建構函數"只有一個引數，且沒有關閉該功能就可以使用
+myCat = 19.6          // 我們可以將數值轉換成物件，只要該類別的"建構函數"只有一個引數，且沒有關閉該功能(沒用explicit)就可以使用
+myCat = Stonewt(19.6) // 就算有explicit 也仍然接受明確的轉換。
 
 
 那麼，可以進行反轉換嗎???   答案是可以的。

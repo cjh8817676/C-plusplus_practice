@@ -10,7 +10,7 @@ private:
     double pounds;                // entire weight in pounds
 public:
     Stonewt(double lbs);          // constructor for double pounds (建構子只有一個引數，才可以作為"轉換函數")
-    //explicit Stonewt(double lbs); //no implicit conversions allowed (加上explicit : [Stonewt incognito = 275; 是不備允許的] )
+    //explicit Stonewt(double lbs); //no implicit conversions allowed (加上explicit : [Stonewt incognito = 275; 是不被允許的] )
     Stonewt(int stn, double lbs); // constructor for stone, lbs
     Stonewt();                    // default constructor
     ~Stonewt();
