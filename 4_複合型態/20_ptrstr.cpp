@@ -20,7 +20,7 @@ int main()
     ps = animal;                // set ps to point to string
     cout << ps << "!\n";       // ok, same as using animal
     cout << "Before using strcpy():\n";
-    cout << animal << " at " <<  animal << endl;
+    cout << animal << " at " <<  &animal << endl;
     cout << *ps << endl;
     cout << ps << " at " << (int *) ps << endl;
 

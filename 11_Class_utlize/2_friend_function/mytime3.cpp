@@ -61,6 +61,6 @@ Time Time::operator*(double mult) const
 
 std::ostream & operator<<(std::ostream & os, const Time & t)
 {
-    os << t.hours << " hours, " << t.minutes << " minutes";
+    os << t.hours << " hours, " << t.minutes << " minutes"; // 在夥伴函數 裡面 可以做到直接存取 Time 類別的private成員
     return os; 
 }

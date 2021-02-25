@@ -1,0 +1,37 @@
+valarray 類別 由 valarray.h 標頭檔提供的。  
+
+如其名，這個類別是用來處理數字型態的數值(或者是處裡具有類似屬性的類別)
+
+所以能夠支援 內容加總運算
+            找處陣列中的maximum、minimum。
+
+為了能夠處裡不同的資料型態，valarray定義為一個 "樣板類別" (稍後 正章 會提到提到。)
+                                            現在只需要知道如何使用樣板類別就好。
+
+
+1. ""以樣板的角度"" 來說，當我們 (((宣告一個物件時，必須提供他一個特定的型態。)))
+特定的型態我們在識別字 valarray的後面 使用"< >"，將想要的型態放入 "< >" 中。
+--------------------------------------------------------
+EX:
+valarray<int> q_values;   // an array of int
+valarray<double> weights; // an array of double
+--------------------------------------------------------
+
+2. ""以類別的角度""，想使用valarray 物件，我們必須知道有關 類別建構函數 以及 其他的類別成員函數。
+--------------------------------------------------------
+類別 使用 樣板 宣告 物件 的範例:
+EX:
+double gpa[5] = {3.1, 3.5, 3.8, 2.9, 3.3};
+valarray<double> v1; // an array of double， size = 0
+valarray<int> v2 (8); //an array of 8 int elements   (產生 8 個 int 存放空間)
+valarray<int> v3 (10,8); // an array of 8 int elements, each set to 10 (產生 8 個 int 存放空間， 每個int空間都放 10)
+
+valarray<double> v4 (gpa, 4); //an array of 4 elements, initialized to the first 4 elements of gpa
+                              //把gpa 前面4個元素放入 v4
+--------------------------------------------------------
+
+
+
+
+
+

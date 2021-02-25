@@ -18,7 +18,7 @@ int main()
     cout << "Displaying hasDMA object:\n";
     cout << map << endl;
     lacksDMA balloon2(balloon);  //複製建構函數問題
-    //lacksDMA balloon2 = balloon; //與上行同樣。 牽涉到 "轉換函數(第11章)"
+    //lacksDMA balloon2 = balloon; //與上行同樣。 
     cout << "Result of lacksDMA copy:\n";
     cout << balloon2 << endl;
     hasDMA map2;

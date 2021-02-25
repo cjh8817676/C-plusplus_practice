@@ -43,6 +43,10 @@
         "xmemory": "cpp",
         "xstddef": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "valarray": "cpp"
+    },
+    "files.exclude": {
+        ".vscode/launch.json": true
     }
 }

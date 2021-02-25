@@ -6,6 +6,7 @@ StringBad sports("Spinach Leaves Bowl for Dollars");                           |
 StringBad sailor = sports; //(可以想成  兩個指標指向同個記憶體的感覺)             |
                                                                                |  
 sports 在使用建構函數new出來的str所在記憶體位址， 也被sailor所參考。<<<<<<<<<<<<<<<ˇ
+若使用 預設的 複製建構函數的情況下 "StringBad sailor = sports;" 會導致sports與sailor會變成相同的物件。(這樣是不被希望的。)
 像是以下範例:
 --------------------------
 sailor.str = sports.str;
