@@ -1,3 +1,63 @@
 多重繼承會帶來2個問題:
 
-從2個不同的 基礎類別繼承 同名但功能不同成員函數，以從 兩個以上 的相關直接基礎類別同一類別的多重實體(instance)
+1.從2個不同的 基礎類別繼承 同名但功能不同成員函數，以從 兩個以上 的相關直接基礎類別同一類別的多重實體(instance)
+
+2.有共同祖先的 多重繼承。如下圖:
+                         ----------------------------------------------------------
+         worker          |class Singer : public Worker {...};                     |
+        /      \         |class Waiter : public Worker {...};                     |
+     Singer    Waiter    |class SingingWaiter : public Singer,public Waiter {...};| 
+        \      /         ----------------------------------------------------------
+      SingingWaiter      Singer與 Waiter 分別繼承同個基礎類別(Workwr)
+                         而SingerWaiter 多重繼承 Singer與Waiter。
+                         會造成SingerWaiter 繼承2個 Worker物件， 但其實只需要一個worker物件(做為一個工人的證明)。
+
+    -----------------------------
+    |   SingingWaiter object    |
+    |                           |
+    |    -----------------      |
+    |    | Singer object |      |
+    |    |               |      |
+    |    |   --------    |      |
+    |    |   |Worker|    |      |
+    |    |   |name _|    |      |
+    |    |   |ID _  |    |      |
+    |    |   --------    |      |
+    |    | pv[Vtypes] _  |      |
+    |    |  voice   _    |      |
+    |    |---------------|      |
+    |                           |
+    |                           |
+    |    -----------------      |
+    |    | Waiter object |      |
+    |    |               |      |
+    |    |   --------    |      |
+    |    |   |Worker|    |      |
+    |    |   |name _|    |      |
+    |    |   |ID _  |    |      |
+    |    |   --------    |      |
+    |    |  panache _    |      |
+    |    |---------------|      |
+    |                           |
+    |---------------------------|  (SingingWaiter 繼承2個基礎的物件)
+
+
+----------------------------------------------------------
+|class Singer : public Worker {...};                     |
+|class Waiter : public Worker {...};                     |
+|class SingingWaiter : public Singer,public Waiter {...};| 
+----------------------------------------------------------
+SingingWaiter 有2個worker物件會出問題。 例如:
+----------------------------
+SingingWaiter ed;
+Worker * pw = &ed; //ambiguous  (ed 有2個Worker物件，該選擇哪一個位址呢????)
+//可以用型態轉換，解決ambiguous
+
+Worker * pw1 = (Waiter *)&ed; //choose worker in Waiter
+Worker * pw2 = (Singer *)&ed; //choose worker in Singer
+
+雖然能解決衝突，但在設計上會變得很複雜。 
+
+無論如何，2個worker物件會造成其他問題。 真正的問題是: 為何要有2分worker??，一個SingingWaiter應該只有一個名子和ID。
+                                                                      
+                                                                      為此C++增加了新的技巧，叫做虛擬基礎類別(virtual base class)

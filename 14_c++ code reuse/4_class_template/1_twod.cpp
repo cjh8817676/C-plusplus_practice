@@ -1,6 +1,6 @@
 // twod.cpp -- making a 2-d array
 #include <iostream>
-#include "arraytp.h"
+#include "1_arraytp.h"
 int main(void)
 {
     using std::cout;

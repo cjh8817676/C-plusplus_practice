@@ -1,0 +1,105 @@
+2.有共同祖先的 虛擬多重繼承。如下圖:
+                         ----------------------------------------------------------
+         worker          |class Singer :virtual public Worker {...};              | //新增virtual 關鍵字
+        /      \         |class Waiter :virtual public Worker {...};              |
+     Singer    Waiter    |class SingingWaiter : public Singer,public Waiter {...};| 
+        \      /         ----------------------------------------------------------
+      SingingWaiter      SingingWaiter 衍生自 Singer 和 Waiter。
+                         Singer 和 Waiter 有共同的祖先(Worker)
+                         ""我們將共同祖先Worker 設為虛擬基礎類別""，可以使此物件只繼承 共同基礎類別 的一個物件。 !!!!!!(重點) 
+
+    -----------------------------
+    |   SingingWaiter object    |
+    |                           |
+    |    |---------------|      |
+    |    | Worker object |      |
+    |    |   name _      |      |
+    |    |   ID _        |      |
+    |    -----------------      |
+    |                           |
+    |    ----------------       |
+    |    | Singer object |      |
+    |    | pv[Vtypes] _  |      |
+    |    |  voice   _    |      |
+    |    |---------------|      |
+    |                           |
+    |    -----------------      |
+    |    | Waiter object |      |
+    |    |  panache _    |      |
+    |    |---------------|      |
+    |                           |
+    |---------------------------| ( 虛擬基礎類別 的繼承)
+
+----------------------------------------------------------
+|class Singer :virtual public Worker {...};              |
+|class Waiter :virtual public Worker {...};              |
+|class SingingWaiter : public Singer,public Waiter {...};| 
+----------------------------------------------------------
+現在SingingWaiter物件，會含有一份Worker物件。
+
+基本上，繼承的Singer 和 Waiter 物件共用一個 Worker物件， 而非各自擁有一個。(為甚麼只有一個??????? 我也不知道~~)
+       ( 所以SingingWaiter物件只繼承到一個 Worker物件 )
+
+以上方法有3個問題:
+1. 為何稱為 "虛擬"???
+    虛擬函數 與 虛擬基礎類別(含純虛擬函數) 的概念之間，似乎沒有明顯的關係。
+    虛擬函數 : 是為了在基礎類別 與 衍生類別 ， 同個函式名稱 可以達成 不同的行為， 所以 ""使用virtual關鍵字"" 設為虛擬函數。 (第13章 資料夾3)
+              虛擬函數 又牽扯到 '動態繫結'
+
+    虛擬基礎類別 : 若衍生類別(SingingWaiter)繼承 基礎類別的(((路徑有2條以上))))(也就是多重繼承)。[多重繼承 才會需要 虛擬基礎類別!!!!!!!!(重點)]
+                                            若基礎類別(worker)是虛擬的 :則衍生類別 只含一個 基礎類別的子物件。 (我也不知道為甚麼，C++就這樣。)
+                                            若基礎類別(worker)非虛擬的 :則衍生類別 會含多個 基礎類別的子物件。 
+                  很直覺的 虛擬基礎類別 在被繼承的時候也需要 ""使用關鍵字 virtual""  
+    
+    這對C++官方企圖"減少關鍵字(精簡指令集)"的做法是很大的壓力，例如:若新的關鍵字剛好與主要程式的某些重要函數或是變數名稱相同是很棘手的。
+                                                               所以C++為此新功能重複"使用關鍵字virtual"，有一點像 "關鍵字多載"
+
+
+2. 為何不廢除 宣告虛擬函數基礎類別 而使用 多重繼承有虛擬行為???
+
+    廢除 宣告虛擬基礎類別 等同於廢除 多重繼承。 但在C++ 多重繼承還是有必要的。
+
+    多重繼承 會有 "哪一個成員函數的問題??"(多重繼承會造成 模糊不清的函數呼叫。) !!!!!!!!!!!!!!!!(重點)
+    ----------------------------------------------------------
+    |class Singer :virtual public Worker {...};              |
+    |class Waiter :virtual public Worker {...};              |
+    |class SingingWaiter : public Singer,public Waiter {...};| 
+    ---------------------------------------------------------
+    例如 : 將Show() 成員函數衍生至 SingingWaiter。 因SingingWaiter沒有新的成員，所以我們會認為使用繼承過來的Show()就好。
+                                                                            但是用 SingingWaite物件呼叫的Show()，可能來自Waiter或Singer
+                                                                            會造成混淆。
+          所以最好還是"重新定義"SingingWaiter的Show()，並在其中標明要使用哪一個Show()。
+          ex:
+          --------------------------
+          void SingingWaiter::Show()
+          {
+              Singer::Show();
+              /*or*/
+              Waiter::Show();
+               /*or*/
+               Singer::Show();
+               Waiter::Show(); /*2個都有*/
+          }
+          --------------------------
+
+3. 有任何陷阱嗎?
+
+
+/////////////虛擬基礎類別 的  建構新規則 //////////////////////////////////////
+虛擬基礎類別 的  建構函數 需要新方法。
+class SingingWaiter : public Singer, public Waiter
+{
+...
+public:
+    SingingWaiter()  {}
+    SingingWaiter(const std::string & s, long n, int p = 0,
+                            int v = other)
+            : Worker(s,n), Waiter(s, n, p), Singer(s, n, v) {}
+    SingingWaiter(const Worker & wk, int p = 0, int v = other)
+            : Worker(wk), Waiter(wk,p), Singer(wk,v) {}
+    SingingWaiter(const Waiter & wt, int v = other)
+            : Worker(wt),Waiter(wt), Singer(wt,v) {}
+    SingingWaiter(const Singer & wt, int p = 0)
+            : Worker(wt),Waiter(wt,p), Singer(wt) {}
+....
+};

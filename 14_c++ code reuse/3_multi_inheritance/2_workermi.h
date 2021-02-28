@@ -4,7 +4,7 @@
 
 #include <string>
 
-class Worker   // an abstract base class
+class Worker   // an abstract base class，just provide a interface
 {
 private:
     std::string fullname;
