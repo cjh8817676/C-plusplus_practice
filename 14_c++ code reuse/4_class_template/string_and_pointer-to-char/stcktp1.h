@@ -7,7 +7,7 @@ class Stack
 {
 private:
     enum {SIZE = 10};    // default size
-    int stacksize;
+    int stacksize;      // 被指定 需要的大小。
     Type * items;       // holds stack items
     int top;            // index for top stack item
 public:

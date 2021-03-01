@@ -50,10 +50,11 @@
 SingingWaiter 有2個worker物件會出問題。 例如:
 ----------------------------
 SingingWaiter ed;
+
 Worker * pw = &ed; //ambiguous  (ed 有2個Worker物件，該選擇哪一個位址呢????)
 //可以用型態轉換，解決ambiguous
 
-Worker * pw1 = (Waiter *)&ed; //choose worker in Waiter
+Worker * pw1 = (Waiter *)&ed; //choose worker in Waiter // 基礎類別 可以指向 衍生類別
 Worker * pw2 = (Singer *)&ed; //choose worker in Singer
 
 雖然能解決衝突，但在設計上會變得很複雜。 

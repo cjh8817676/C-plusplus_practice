@@ -16,8 +16,13 @@ public:
     bool pop(Type & item);        // pop top into item
     void check();
     //friend review
-    /*
-    friend std::ostream & operator<<(std::ostream & os, const Stack<Type> & t);*/
+    
+    friend std::ostream & operator<<(std::ostream & os, const Stack<Type> & t)
+    {
+        for (int i=0;i<t.top;++i)
+            os << t.items[i] ;
+        return os;
+    };
 
 };
 
@@ -69,13 +74,6 @@ void Stack<Type>::check()
     for (int i=0;i<top;++i)
         std::cout << items[i] << std::endl;
 }
-/*
-template <class Type>
-std::ostream & operator<<(std::ostream & os, const Stack<Type> & t)
-{
-    for (int i=0;i<t.top;++i)
-        os << t.items[i] ;
-    return os;
-}*/
+
 
 #endif

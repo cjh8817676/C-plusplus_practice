@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
-#include "0_stacktp.h"
+#include "stacktp.h"
 using std::cin;
 using std::cout;
 
@@ -40,7 +40,8 @@ int main()
                           cout << "PO #" << po << " popped\n";
                           break;
                       }
-            case 'c': st.check();
+            case 'c': cout << st;
+                //st.check();
         }
         cout << "Please enter A to add a purchase order,\n"
              << "P to process a PO, or Q to quit.\n";
