@@ -48,5 +48,6 @@
     },
     "files.exclude": {
         ".vscode/launch.json": true
-    }
+    },
+    "workspace.isHidden": false
 }
