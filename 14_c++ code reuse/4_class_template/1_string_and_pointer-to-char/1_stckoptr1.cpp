@@ -2,16 +2,16 @@
 #include <iostream>
 #include <cstdlib>     // for rand(), srand()
 #include <ctime>       // for time()
-#include "stcktp1.h"
+#include "1_stcktp1.h"
 const int Num = 10;
 int main()
 {
     std::srand(std::time(0)); // randomize rand()
     std::cout << "Please enter stack size: ";
     int stacksize;
-    std::cin >> stacksize;
+    std::cin >> stacksize; //要小於 Num
 // create an empty stack with stacksize slots
-    Stack<const char *> st(stacksize); 
+    Stack<const char *> st(stacksize);   // 利用建構子，決定大小。
 
 // in basket
     const char * in[Num] = {

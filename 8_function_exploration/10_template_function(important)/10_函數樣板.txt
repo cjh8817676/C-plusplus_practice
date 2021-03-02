@@ -1,0 +1,28 @@
+現代 C++ 編譯程式 會"實作" 函數樣板(function template)
+
+函數樣板 是 泛型函式的描述， 也就是說 :  ""以型態定義函數""。
+
+因為樣板 是以 泛型型態 而非 特定型態 來進行程式設計。
+
+Ex:
+--------------------------------------
+template <typename AnyType>  //這是 樣板 函數 (typename 也可以用 class) --> template <class AnyType> 
+void Swap (AnyType &a, AnyType &b)
+{
+    AnyType temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+--------------------------------------
+
+記住: "樣版" 不會產生任何函數， 它只提供 編譯程式 "方法" 如何定義函數。
+
+若需要交換2個int    的函數， 則編譯程式會依 樣板 產生函數。 用int    取代 AnyType。
+若需要交換2個double 的函數， 則編譯程式會依 樣板 產生函數。 用double 取代 AnyType。
+
+
+關鍵字 "typename" 會明確地告知參數 AnyType 型態。
+
+編譯程式 會檢查您使用的 引數型態，然後產生對應的函數。
+

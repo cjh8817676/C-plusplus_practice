@@ -1,0 +1,67 @@
+類別樣板 就像 函數樣板(第8章)， 我們可以處裡 
+1.隱式實體化(implicit instantiation)
+2.顯示實體化(explicit instantiation)
+3.顯示特定化(explicit specialization)
+
+///////////////////////////////////
+///////////////////////////////////
+
+以上3點統稱為  特定化 (specialization)。    意思是樣板以通用型態描述類別。但是 特定化 是用 特定型態 產生類別宣告。!!!!!!(重點)
+
+類別樣板 與 類別函數 會因為 型態的不同， 而產生不同的行為。
+
+
+1.       隱式實體化(implicit instantiation) (只有 ""通用樣板"" )
+
+前面遇到的都是 隱式實體化。 也就是說，他們宣告一個或多個物件表示目的型態，編譯程式會用 ""通用樣板"" 所提供的方法，產生特定化的類別定義:
+----------------------------------------------
+template <class T, int n>
+class ArrayTP
+{
+private:
+    T ar[n];
+public:
+    ArrayTP() {};
+    explicit ArrayTP(const T & v);
+    virtual T & operator[](int i);
+    virtual T operator[](int i) const;
+};
+
+ArrayTP<int, 100> stuff; //implicit instantiation 隱式實體化
+----------------------------------------------
+
+編譯程式不會產生類別的 隱式實體化，直到它需要物件。  (有物件，才能實體化)
+
+---------------------------------------------------------------
+ArrayTP<double, 30> * pt; //just a pointer, no object needed yet
+pt = new ArrayTP<double, 30>; // now an object is needed
+
+第二個敘述會使編譯程式 產生類別定義，並根據此定義產生物件。
+---------------------------------------------------------------
+
+2.        顯示實體化(explicit instantiation) (有使用特定化)
+---------------------------------------------------------------
+template class ArrayTB<string , 100>; //generate ArrayTb <string, 100> class
+
+宣告 ArrayTB<string , 100> 是一個類別。
+---------------------------------------------------------------
+
+3.        顯示特定化(explicit specialization)
+          特定化的原形:
+                        template <> class Classname<specialized-type-name> {...};
+                        ex:
+                        template <> class SortedArray<const char *>
+                        {
+                            ...
+                        }  
+
+請參考 範例程式。
+
+          顯示特定化 若 型態參數 有2個以上，可以部份特定化。
+        ex:
+        template <class T1, class T2> class Pairs {...};  //general template
+        template <class T1> class Pairs <T1, int> {...};  //specialization with T2 set to int (部分特定化)
+        template <> class Pairs  <int, int> {...};        //specialization with T2 and T1 set to int
+        
+
+

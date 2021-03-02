@@ -1,13 +1,14 @@
 // twod.cpp -- making a 2-d array
+/*與資料夾2 一樣的檔案*/
 #include <iostream>
-#include "1_arraytp.h"
+#include "arraytp.h"
 int main(void)
 {
     using std::cout;
     using std::endl;
-    ArrayTP<int, 10> sums;
+    ArrayTP<int, 10> sums;   //implicit instantiation 隱式實體化
     ArrayTP<double, 10> aves;
-    ArrayTP< ArrayTP<int,5>, 10> twodee;
+    ArrayTP< ArrayTP<int,5>, 10> twodee; // 5cols 10rows。
     
     
     int i, j;
@@ -26,7 +27,7 @@ int main(void)
     {
         for (j = 0; j < 5; j++)
         {
-            cout.width(2);
+            cout.width(2);  //用2個字元寬顯示
             cout << twodee[i][j] << ' ';
         }
         cout << ": sum = ";

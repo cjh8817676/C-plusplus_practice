@@ -17,8 +17,8 @@ private:
 public:
     HasFriendT(const TT & i) : item(i) {ct++;}
     ~HasFriendT() { ct--; }
-    friend void counts<TT>();
-    friend void report<>(HasFriendT<TT> &);
+    friend void counts<TT>(); // counts<TT>()  的<TT> ， 在使用的時候必須藉由 counts<int>()達到特定化， 此為:限制樣板夥伴函數
+    friend void report<>(HasFriendT<TT> &); // HasFriendT<TT> 的<TT> ， 在使用的時候可以藉由 "引數"達到特定化。此為:限制樣板夥伴函數
 };
 
 template <typename T>
@@ -48,9 +48,9 @@ int main()
     report(hfi2);  // generate report(HasFriendT<int> &)
     report(hfdb);  // generate report(HasFriendT<double> &)
     cout << "counts<int>() output:\n";
-    counts<int>();
+    counts<int>();    //counts<int>() 表示 "特定化" 為 HasFriendT<int>而已， 所以稱為 "限制樣板"夥伴函數
     cout << "counts<double>() output:\n";
-    counts<double>();
+    counts<double>(); //counts<double>() 表示 "特定化"為 HasFriendT<double>而已，所以稱為 "限制樣板"夥伴函數
     // std::cin.get();
     return 0; 
 }

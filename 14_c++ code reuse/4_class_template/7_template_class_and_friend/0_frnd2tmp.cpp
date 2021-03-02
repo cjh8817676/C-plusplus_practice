@@ -12,11 +12,11 @@ private:
 public:
     HasFriend(const T & i) : item(i) {ct++;}
     ~HasFriend()  {ct--; }
-    friend void counts();
-    friend void reports(HasFriend<T> &); // template parameter
+    friend void counts();                 //非樣板 夥伴函數 (就只是一般的夥伴函數)
+    friend void reports(HasFriend<T> &); // 提供樣板類別 給夥伴函數，依然能存取該樣板類別的私有成員。
 };
 
-// each specialization has its own static data member
+// each specialization has its own static data member!!!!!!!!!!!!!!!
 template <typename T>
 int HasFriend<T>::ct = 0;
 

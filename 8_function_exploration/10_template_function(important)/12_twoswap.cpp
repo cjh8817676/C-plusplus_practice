@@ -49,7 +49,7 @@ void Swap(T &a, T &b)    // general version
 }
 
 // swaps just the salary and floor fields of a job structure
-//特定化(template <>)會複寫 一般的樣板(template <typename T>)
+//"特定化(template <>)" 會複寫 一般的樣板(template <typename T>)
 //而非樣板(一般函式)會複寫這兩者。
 template <> void Swap<job>(job &j1, job &j2)  // specialization(特定化) //<job>可+可不+
 {

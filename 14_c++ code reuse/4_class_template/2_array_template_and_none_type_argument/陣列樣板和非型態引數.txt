@@ -1,0 +1,68 @@
+樣板最常用於 收納容器類別(container class)。  因為型態參數的概念( Stack<std::string> st; 將型態string作為參數傳入<>中。)
+
+
+陣列 與 陣列樣板: 多加一個樣板，就會變成可以存取 "指定"型態的容器。
+
+//////////////////////////////////////////////////////////////////////////////
+我們從可指定陣列大小的簡單 "陣列樣板" 開始，在類別中用 動態陣列 有2種方法。
+1. Stack<const char *> st(stacksize);   // 利用建構子，決定大小。 (本章 資料夾1  stckoptr1.cpp)
+
+2. ArrayTP< ArrayTP<int,5>, stacksize> twodee; // 提供 樣板作為引數，提供陣列大小。
+
+/////////////////////////////////////////////////////////////////////////////
+
+多樣化的樣板 : 樣板類別可以作為 "基礎類別" ， 也能成為 "元件類別"。  樣板類別 可為 其他樣板的引數型態。
+
+例如: (.h)
+-------------------------------------------------
+template <typename T>
+class Array
+{
+    private:
+        T entry;
+        ...
+};
+
+/*is-a 關係*/
+template <typename Type>
+class GrowArray : public Array<Type> {...}; // inheritance (Array<Type> 為基礎類別 (與第13章一樣，只是多給予型態參數) )
+
+/*has-a 關係*/
+template <typename Tp>
+class Stack
+{
+    Array<Tp> ar; // use Array<> as a component
+}
+...
+
+Array < stack<int> > asi;  // an array  of stacks of int.
+--------------------------------------------------
+
+
+遞回的使用樣板:
+ArrayTP < ArrayTP<int,5>, 10> twodee;
+//twodee 為10個元素的陣列，  每個元素是5個int的陣列。
+
+注意!!!!!! 樣板的語法表示 "維度" 的順序與一般的同等二維振烈順序相反。
+
+
+
+////////////////////////非型態引數////////////////////////////
+不同于 c # 和 JAVA 等語言中的泛型型別，c + + 範本支援 "非型態參數"，也稱為值參數。 例如，您可以提供常數整數值來指定陣列的長度
+                                            ^~~~~~~~~~~~~~~~~=> 也就是說可以在"樣板"宣告時，使用typename以外的關鍵字
+typename T 的T為型態參數                                         例如使用 int、double
+                                    
+如下列範例所示，這類似于標準程式庫中的 std：： array 類別：
+-------------------------------------------------------
+template<typename T, int L>
+class MyArray
+{
+    T arr[L];
+public:
+    MyArray() { ... }
+};
+
+MyArray<MyClass*, 10> arr;
+-------------------------------------------------------
+
+

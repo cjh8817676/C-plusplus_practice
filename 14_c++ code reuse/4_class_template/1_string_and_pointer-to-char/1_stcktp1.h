@@ -24,11 +24,11 @@ public:
 template <class Type>
 Stack<Type>::Stack(int ss) : stacksize(ss), top(0)
 {
-    items = new Type [stacksize];
+    items = new Type [stacksize]; //配置 stacksize個 的 Type型態 的 記憶體。
 }
 
 template <class Type>
-Stack<Type>::Stack(const Stack & st)
+Stack<Type>::Stack(const Stack & st) // copy constructure
 {
     stacksize = st.stacksize;
     top = st.top;
@@ -62,7 +62,7 @@ bool Stack<Type>::pop(Type & item)
 }
 
 template <class Type>
-Stack<Type> & Stack<Type>::operator=(const Stack<Type> & st)
+Stack<Type> & Stack<Type>::operator=(const Stack<Type> & st)// 指定運算子
 {
     if (this == &st)
         return *this;

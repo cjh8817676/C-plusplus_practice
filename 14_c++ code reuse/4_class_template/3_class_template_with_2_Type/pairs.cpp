@@ -1,7 +1,7 @@
 // pairs.cpp -- defining and using a Pair template
 #include <iostream>
 #include <string>
-template <class T1, class T2>
+template <class T1, class T2>//這個程式只是表示 c++可以多個 型態參數(T1、T2) 而已
 class Pair
 {
 private:

@@ -1,0 +1,83 @@
+假設一個定義的結構如下:
+------------------------------------------------
+struct job
+{
+    char name[40];
+    double salary;
+    int floor;
+}
+
+template <typename T>
+void Swap(T &a, T &b)    // general version
+{
+    T temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+job j1,j2;
+Swap(j1,j2); //C++允許 一個結構 指定給另一個結構，所以雖然型態T是job結構，這方法是可行的。
+---------------------------------------------
+
+假設我們想叫交換2個結構的內容。原始樣板使用下面的程式碼完成交換功能。
+temp =a;
+a = b;
+b = temp;
+
+問題: 現在我只想交換結構中的salary或name成員 該怎麼寫呢??? !!!!!!!!!!!!!!!!!!!!!
+答  : 這需要不同的程式碼，不能像上面交換全部元素的方法一樣，swap()的"引數"傳遞結構的reference，所以不可以使用"樣板多載"來提供另一種程式碼。
+-------------------------------------------------------------------------------------------
+//只想交換名子，不能只有這樣寫。 因為函數 的引數部分與 general version相同，編譯器分辨不出來
+
+template <typename T>    |    template <typename T>    
+void Swap(T &a, T &b)    |     void Swap(T &a, T &b)  //general version
+{                        |     {
+    T temp;              |        T temp;
+    temp = a.name;       |         temp = a;
+    a.name = b.name;     |         a = b;
+    b.name = temp;       |         b = temp;
+}                        |     }
+
+左右2邊編譯器分辨不出來，要使用 "顯示特定化(explicit specialization)"。
+---------------------------------------------------------------------------------------
+
+      所以需要提供 """特定化的函數定義"""，稱為 顯示特定化(explicit specialization)
+      編譯程式發現特定化的定義與函數的呼叫，則會使用定義而不再檢查樣板。
+
+/////////////////////////////////////////////////////////////////////////
+
+第三代特定化(ISO / ANSI C++ Standard)!!!!!!!!!!!!!!!!!!!!(重點)
+
+1.對於某一個函數"名稱"， 可以擁有 "非樣板函數"、 "樣板函數" 和 "顯示特定化函數的樣板函數"， 並且都有多載的版本。
+2.顯示特定化 的原型 和 定義 應前置 template<>，並要提及特定的型態名稱。
+3."特定化" 會覆寫 "一般的樣板"， 而非樣板函數會複寫兩者。!!!!!!!!!!!!!!!!! 
+
+以下是三種 交換型態為job結構的 三種原型格式
+---------------------------------------------------------------------------
+//none template function prototype
+void swap(job &, job &);
+
+//template prototype
+template <typename T>
+void swap (T &,T &);
+
+//explicit specialization for the job typename 
+template <> void Swap<job> (job &, job &);   // 只有是 job型態才會呼叫該函式
+
+.......
+......./*若出現swap(job &j1, job &j2) ， 會先從 1.nonetemplate開始找， 再從2.特定化樣板找， 最後才找到3.通用樣板*/
+.......
+
+//explicit specialization for job type (顯示實體化)
+template<> void Swap<job>(job &,job &); //!!!!!!!!!!!!!!!!!(重點)
+
+int main()
+{
+    double u,v;
+    ...
+    Swap(u,v); //use template
+    job a,b;
+    Swap(a,b); //use void Swap<job>(job &,job &)
+}
+
+---------------------------------------------------------------------------
