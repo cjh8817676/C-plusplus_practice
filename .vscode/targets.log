@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sat Feb 20 15:39:34 2021
+# Make data base, printed on Tue Mar 02 23:06:02 2021
 
 # Variables
 
@@ -31,8 +31,7 @@ VSCODE_LOG_NATIVE = false
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
 HOMEDRIVE = C:
-# a 
-utomatic
+# automatic
 @F = $(notdir $@)
 # automatic
 ^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
@@ -49,7 +48,7 @@ PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # makefile
 MAKEFILE_LIST := 
 # environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
+SystemRoot = C:\Windows
 # environment
 VSCODE_NODE_CACHED_DATA_DIR = C:\Users\jonat\AppData\Roaming\Code\CachedData\622cb03f7e070a9670c94bae1a45d78d7181fbd4
 # environment
@@ -63,11 +62,9 @@ SystemDrive = C:
 # environment
 CommonProgramFiles(x86) = C:\Program Files (x86)\Common Files
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-7f8901a4-f8f1-46a9-aa85-53eb86df620d-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-aea3873d-6b79-404c-b4f5-03afadec5d3a-sock
 # environment
 VSCODE_CWD = C:\Users\jonat\AppData\Local\Programs\Microsoft VS Code
-# environment
-SystemRoot = C:\Windows
 # environment
 PATH = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;;;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Git\Git\bin;C:\Users\jonat\OneDrive\�ୱ\frp\window;C:\MinGW\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\MATLAB\R2018a\runtime\win64;C:\Program Files\MATLAB\R2018a\bin;C:\cmake-3.19.4-win64-x64\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\opencv\build\x64\vc14\bin;C:\src\wget;C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1\;C:\Users\jonat\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\jonat\AppData\Local\Programs\Python\Python39\;C:\Users\jonat\AppData\Local\Microsoft\WindowsApps;C:\Users\jonat\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jonat\AppData\Roaming\npm;C:\src\flutter\bin;C:\Users\jonat\.dotnet\tools
 # environment
@@ -77,7 +74,8 @@ USERPROFILE = C:\Users\jonat
 # environment
 ALLUSERSPROFILE = C:\ProgramData
 # environment
-ComSpec = C:\Windows\system32\cmd.exe
+ComSp 
+ec = C:\Windows\system32\cmd.exe
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -93,7 +91,7 @@ ProgramW6432 = C:\Program Files
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13700_XEPRTTIUBYCYGKOH
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_18976_EQCGXNOJTTGQLEAK
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -112,7 +110,8 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProce
 CommonProgramW6432 = C:\Program Files\Common Files
 # environment
 ProgramData = C:\ProgramData
-# environment
+# en 
+vironment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 LOGONSERVER = \\DESKTOP-691CGGN
@@ -171,7 +170,8 @@ MFLAGS = -Rrqp
 # environment
 INTEL_DEV_REDIST = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
 # environment
-PSModulePath = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PSModulePath = C:\Program Files\Windows 
+PowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
 # automatic
 +D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
 # environment
@@ -192,7 +192,8 @@ MAKEFILES :=
 <F = $(notdir $<)
 # automatic
 ^F = $(notdir $^)
-# environment
+# enviro 
+nment
 CUDA_PATH = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0
 # environment
 ProgramFiles = C:\Program Files (x86)
@@ -207,16 +208,14 @@ PROCESSOR_REVISION = 9e0a
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+VSCODE_PID = 18976
 # environment
-VSCODE_PID = 13700
-# environment
-USERDOMAIN_ROAMINGPROFILE = DESKTOP- 
-691CGGN
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-691CGGN
 # variable set hash-table stats:
-# Load=100/1024=10%, Rehash=0, Collisions=13/116=11%
+# Load=98/1024=10%, Rehash=0, Collisions=12/114=11%
 
-# Pattern-specific Variable Values
+# Pattern-specific Variable 
+ Values
 
 # No pattern-specific variable values.
 
@@ -225,47 +224,47 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-
 # : could not be stat'd.
 # C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp (key C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/libnvvp, mtime 1612728280): 14 files, no impossibilities.
 # C:\Users\jonat\.dotnet\tools: could not be stat'd.
-# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/ 
-Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1612541095): 5 files, no impossibilities.
-# C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1611905197): 33 files, no impossibilities.
-# . (key c:/Users/jonat/OneDrive/Desktop/c++_practice, mtime 1613558344): 13 files, no impossibilities.
-# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1612063981): 5 files, no impossibiliti 
-es.
+# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1612541095): 5 files, no impossibilities.
+# C:\Windows\System32\Win 
+dowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1611905197): 33 files, no impossibilities.
+# . (key c:/Users/jonat/OneDrive/Desktop/c++_practice, mtime 1614696501): 15 files, no impossibilities.
+# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1612063981): 5 files, no impossibilities.
 # C:\src\flutter\bin (key C:/src/flutter/bin, mtime 1612019007): 8 files, no impossibilities.
-# C:\Users\jonat\AppData\Local\Microsoft\WindowsApps (key C:/Users/jonat/AppData/Local/Microsoft/WindowsApps, mtime 1612727236): 14 files, no impossibilities.
+# C:\Users\jonat\AppData 
+\Local\Microsoft\WindowsApps (key C:/Users/jonat/AppData/Local/Microsoft/WindowsApps, mtime 1613811137): 14 files, no impossibilities.
 # C:\Program Files\Git\cmd (key C:/Program Files/Git/cmd, mtime 1608296293): 8 files, no impossibilities.
-# C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin (key C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin, mtime 1612729139):  
-50 files, no impossibilities.
+# C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin (key C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.0/bin, mtime 1612729139): 50 files, no impossibilities.
 # C:\Windows\System32\OpenSSH\: could not be stat'd.
-# C:\Users\jonat\AppData\Roaming\npm (key C:/Users/jonat/AppData/Roaming/npm, mtime 1610093003): 18 files, no impossibilities.
+# C:\Users\jonat\AppData\Roaming\npm (k 
+ey C:/Users/jonat/AppData/Roaming/npm, mtime 1610093003): 18 files, no impossibilities.
 # C:\cmake-3.19.4-win64-x64\bin (key C:/cmake-3.19.4-win64-x64/bin, mtime 1611849809): 7 files, no impossibilities.
 # C:\MinGW\bin (key C:/MinGW/bin, mtime 1611164591): 59 files, no impossibilities.
 # C:\src\wget (key C:/src/wget, mtime 1612703483): 4 files, no impossibilities.
-# C:\Program Files (x86 
-)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1612527096): 10 files, no impossibilities.
+# C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1612527096): 10 files 
+, no impossibilities.
 # C:\Users\jonat\AppData\Local\Programs\Python\Python39\ (key C:/Users/jonat/AppData/Local/Programs/Python/Python39/, mtime 1612709675): 19 files, no impossibilities.
 # C:\Users\jonat\AppData\Local\Programs\Python\Python39\Scripts\ (key C:/Users/jonat/AppData/Local/Programs/Python/Python39/Scripts/, mtime 1612709687): 15 files, no impossibilities.
-# C:\Program Files 
- (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler (key C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler, mtime 1608298303): 17 files, no impossibilities.
+# C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler (key C:/Program Files (x86)/Common Files/Intel/Shared L 
+ibraries/redist/intel64/compiler, mtime 1608298303): 17 files, no impossibilities.
 # C:\Windows (key C:/Windows, mtime 1613233218): 110 files, no impossibilities.
 # C:\Program Files\MATLAB\R2018a\bin (key C:/Program Files/MATLAB/R2018a/bin, mtime 1611930218): 22 files, no impossibilities.
 # C:\Users\jonat\OneDrive\�ୱ\frp\window: could not be stat'd.
-# C:\Program Files\Microsoft SQL Ser 
-ver\130\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/130/Tools/Binn/, mtime 1611132914): 4 files, no impossibilities.
+# C:\Program Files\Microsoft SQL Server\130\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/130/Tools/Binn/, mtime 1611132914): 4 files, no impossibili 
+ties.
 # C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1611905197): 156 files, no impossibilities.
 # C:\Program Files\Git\Git\bin: could not be stat'd.
 # C:\Program Files\NVIDIA Corporation\Nsight Compute 2020.1.1\ (key C:/Program Files/NVIDIA Corporation/Nsight Compute 2020.1.1/, mtime 1612728243): 12 files, no impossibilities.
-# C:\Program Files\Common Files\Oracle\Java\ 
-javapath (key C:/Program Files/Common Files/Oracle/Java/javapath, mtime 1612063494): 6 files, no impossibilities.
-# C:\Program Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1608296741): 11 files, no impossibilities.
+# C:\Program Files\Common Files\Oracle\Java\javapath (key C:/Program Files/Common Files/Oracle/Java/javapath, mtime 1612063494): 6 files, no impossibilities.
+# C:\Pro 
+gram Files\nodejs\ (key C:/Program Files/nodejs/, mtime 1608296741): 11 files, no impossibilities.
 # C:\opencv\build\x64\vc14\bin (key C:/opencv/build/x64/vc14/bin, mtime 1612672569): 11 files, no impossibilities.
-# C:\Windows\system32 (key C:/Windows/system32, mtime 1613473976): 2984 files, no impossibilities.
-# C:\Program Files\dotnet\ (key C:/Program Files/dotnet/, mtime 1612529087):  
-11 files, no impossibilities.
-# C:\Users\jonat\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/jonat/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1613139731): 4 files, no impossibilities.
+# C:\Windows\system32 (key C:/Windows/system32, mtime 1614257966): 2981 files, no impossibilities.
+# C:\Program Files\dotnet\ (key C:/Program Files/dotnet/, mtime 1612529087): 11 files, no impossibilities.
+# C:\Users\jonat\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/jonat/AppData/Lo 
+cal/Programs/Microsoft VS Code/bin, mtime 1613139731): 4 files, no impossibilities.
 # C:\Program Files\MATLAB\R2018a\runtime\win64 (key C:/Program Files/MATLAB/R2018a/runtime/win64, mtime 1611929480): 10 files, no impossibilities.
 
-# 3640 files, no impossibilities in 34 directories.
+# 3639 files, no impossibilities in 34 directories.
 
 # Implicit Rules
 
@@ -276,14 +275,14 @@ javapath (key C:/Program Files/Common Files/Oracle/Java/javapath, mtime 16120634
 # Not a target:
 all:
 #  Command line target.
-#  Implicit 
- rule search has been done.
+#  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
-#  Implicit rule search has not been done.
+#  Implicit  
+rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -301,12 +300,12 @@ makefile:
 #  File has been updated.
 #  Failed to be updated.
 
-# Not a ta 
-rget:
+# Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
+#  File has not been update 
+d.
 
 # Not a target:
 GNUmakefile:
@@ -323,16 +322,16 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 7 (6) / strings = 3592 / storage = 53809 B / avg = 14 
- B
+# strcache buffers: 7 (6) / strings = 3591 / storage = 53806 B / avg = 14 B
 # current buf: size = 8174 B / used = 4817 B / count = 304 / avg = 15 B
-# other used: total = 45635 B / count = 3288 / avg = 13 B
-# other free: total = 52 B / max = 14 B / min = 5 B / avg = 8 B
+# other used: total = 45632 B / count = 3287 /  
+avg = 13 B
+# other free: total = 55 B / max = 14 B / min = 2 B / avg = 9 B
 
-# strcache performance: lookups = 3682 / hit rate = 2%
+# strcache performance: lookups = 3681 / hit rate = 2%
 # hash-table stats:
-# Load=3592/8192=44%, Rehash=0, Collisions=1306/3682=35%
-# Finished Make data base on Sat Feb 20 15:39:34 2021
+# Load=3591/8192=44%, Rehash=0, Collisions=1304/3681=35%
+# Finished Make data base on Tue Mar 02 23:06:02 2021
 
  
 make.exe: *** No rule to make target 'all'.  Stop.

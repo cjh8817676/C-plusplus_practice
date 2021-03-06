@@ -3,7 +3,7 @@
 int main()
 {
     using namespace std;
-    const int ArSize = 10;
+    const int ArSize = 20;
     char name[ArSize];
     char dessert[ArSize];
 

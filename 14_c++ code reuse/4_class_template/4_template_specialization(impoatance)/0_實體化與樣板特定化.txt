@@ -55,13 +55,18 @@ template class ArrayTB<string , 100>; //generate ArrayTb <string, 100> class
                             ...
                         }  
 
-請參考 範例程式。
+請參考 範例程式。(目前沒有，之後網路找)
 
           顯示特定化 若 型態參數 有2個以上，可以部份特定化。
         ex:
         template <class T1, class T2> class Pairs {...};  //general template
+
         template <class T1> class Pairs <T1, int> {...};  //specialization with T2 set to int (部分特定化)
         template <> class Pairs  <int, int> {...};        //specialization with T2 and T1 set to int
+
+	  必須先有 general template，才有 特定化 與 部分特定化
+
+
         
 
 

@@ -31,5 +31,5 @@ class BaseEllipse //  abstract base class(抽象 基礎 類別) ， 因為有成
 
 -------------------------------------------------------------------------------------------
 抽象基礎類別(A) 被分別 繼承給  class B 跟 class C。
-
+.
 那麼我們可以利用 A reference或指標 ， 同時管理class B 和 class C。
