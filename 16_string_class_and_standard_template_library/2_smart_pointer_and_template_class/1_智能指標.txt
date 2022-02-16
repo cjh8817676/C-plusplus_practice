@@ -1,0 +1,38 @@
+智能指標 (smartpointer)
+
+--------------------------------------
+void remodel(string &str)
+{
+    string * ps = new string(str);
+    ...
+    str = ps;
+    return;
+}
+--------------------------------------
+
+每當以上 函式 被呼叫時，都會從 stack 中配置記憶體位置(new)。但有時卻未做歸還記憶體的動作，導致記憶體缺口(memory leak)。  !!!!!!!!!!!1
+
+所以上面 函示 在執行後，在return前需要 釋放記憶體(delete)。
+
+幹!! 她媽就是會忘記加delete，就是會忘記。
+
+所以我們有 智慧指標 auto_ptr(C++98)、unique_ptr(C++11)、shared_ptr(C++11)。
+
+auto_ptr 在 C++11 被列為 舊式內容。
+
+
+--------------------------------------
+void remodel(string &str)
+{
+   std::auto_ptr<std::string> ps (new std::string(str));
+   ...
+   if (weird_thing())
+    throw exception;
+   str = *ps;
+   // delete ps; // No longer needed
+   return;
+}
+--------------------------------------
+智能指標屬於 std 的 namespace。
+
+但事情似乎不是那麼容易。 請看範例程式碼!

@@ -9,7 +9,7 @@ sports 在使用建構函數new出來的str所在記憶體位址， 也被sailor
 若使用 預設的 複製建構函數的情況下 "StringBad sailor = sports;" 會導致sports與sailor會變成相同的物件。(這樣是不被希望的。)
 像是以下範例:
 --------------------------
-sailor.str = sports.str;
+sailor.str = sports.str; 2個物件一樣，所以內容一樣。
 sailor.len = sports.len;
 --------------------------
 

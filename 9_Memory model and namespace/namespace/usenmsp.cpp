@@ -1,6 +1,7 @@
 // usenmsp.cpp -- using namespaces
 #include <iostream>
 #include "namesp.h"
+#include "namesp.cpp"
 
 void other(void);
 void another(void);

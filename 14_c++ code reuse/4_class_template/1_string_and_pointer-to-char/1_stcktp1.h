@@ -22,7 +22,7 @@ public:
 };
 
 template <class Type>
-Stack<Type>::Stack(int ss) : stacksize(ss), top(0)
+Stack<Type>::Stack(int ss) : stacksize(ss), top(0)   // stacksize= ss top = 0 的意思
 {
     items = new Type [stacksize]; //配置 stacksize個 的 Type型態 的 記憶體。
 }

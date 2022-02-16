@@ -38,7 +38,7 @@ double refcube( double &ra)
     return ra; 
 }
 
-double refcube2(const double &ra)
+double refcube2(const double &ra) //加上 const ， 才不會導致main裡的資料改變。
 {
     return ra*ra*ra; 
 }

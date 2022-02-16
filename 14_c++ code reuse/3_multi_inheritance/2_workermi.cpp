@@ -27,24 +27,24 @@ void Worker::Get()
 void Waiter::Set()
 {
     cout << "Enter waiter's name: ";
-    Worker::Get();
-    Get();
-}
-
-void Waiter::Show() const
-{
-    cout << "Category: waiter\n";
-    Worker::Data();
-    Data();
-}
-
-// protected methods
-void Waiter::Data() const
-{
-    cout << "Panache rating: " << panache << endl;
-}
-
-void Waiter::Get()
+    Worker::Get();    // worker 的資料輸入
+    Get();            // waiter 的資料輸入 ----------------->|
+}                     //                                    |
+                      //                                    | 
+void Waiter::Show() const//                                 |
+{                        //                                 |
+    cout << "Category: waiter\n"; //                        |
+    Worker::Data();   // worker 的DATA顯示                   |
+    Data();           // waiter 的DATA顯示---->              |
+}                     //                     |              |
+                      //                     |              |
+// protected methods  //                     |              |
+void Waiter::Data() const  //  <<<-----------v              |
+{                                                     //    |
+    cout << "Panache rating: " << panache << endl;    //    |
+}                                                     //    | 
+                                                      //    |
+void Waiter::Get()  //  <<<---------------------------------v
 {
     cout << "Enter waiter's panache rating: ";
     cin >> panache;

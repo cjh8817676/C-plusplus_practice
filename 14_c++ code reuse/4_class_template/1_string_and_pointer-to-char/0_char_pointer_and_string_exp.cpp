@@ -15,7 +15,8 @@ int main()
     //char po[40];     // 型態不 匹配，(編譯會直接錯)
     char * po = new char[40]; //只會配置 一次記憶體， 導致 Stack裡的 Type items[MAX];  ，每一個都指向相同記憶體，所以顯示都會一樣
     cout << "Please enter A to add a purchase order,\n"
-         << "P to process a PO, or Q to quit.\n";
+         << "P to process a PO, or Q to quit.\n"
+         << "C TO CHECK.\n";
     while (cin >> ch && std::toupper(ch) != 'Q')
     {
         while (cin.get() != '\n')

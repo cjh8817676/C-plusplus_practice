@@ -1,0 +1,11 @@
+字串的處理:
+
+建立string物件!!
+
+列印string物件內的內容
+將資料讀入string物件
+附加資料至sstring
+指定至string物件
+連接2個string物件
+
+比較字串!!

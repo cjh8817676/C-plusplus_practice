@@ -5,7 +5,7 @@ using namespace std;
 //在TableTennisPlayer player1("Chuck", "Blizzard", true); 時可以互相通用是因為有各種不同參數型態的建構子才得以成立
 int main()
 {
-    string s1 = "penguin";  // 1.用 C型態字串 初始化 string物件
+    string s1 = "penguin";  // 1.用 C型態字串("penguin") 初始化 string物件(s1)
     char * str1 = "tiger";
     string & s2 = s1;     // 用reference參考物件
     //string & fn 在接收到 C形式字串

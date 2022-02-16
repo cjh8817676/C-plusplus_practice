@@ -1,0 +1,46 @@
+提供main.cpp。
+---------------------------------------
+#include <iostream>
+#include "Person.h"
+
+int main()
+{
+    using namespace std;
+    Person one;
+    Person two("Symthecraft");
+    Person three("Dimwiddy", "Sam");
+    one.show();
+    cout << endl;
+    one.FormalShow();
+    cout << endl;
+
+    two.show();
+    cout << endl;
+    two.FormalShow();
+    cout << endl;
+    
+    three.show();
+    cout << endl;
+    three.FormalShow();
+}
+------------------------------------
+
+和只有提供以下
+------------------------------------
+class Person
+{
+private:
+    static const int LIMIT = 25;
+    std::string lname; // Person's last name
+    char fname[LIMIT]; // Person's first name
+
+public:
+    Person() {lname = ""; fname[0] = '\0' ;} // #1
+    Person(const std::string & ln, const char * fn = "Heyyou"); //#2
+    void show() const;       // firstname, lastname format
+    void FormalShow() const; // lastname, firstname format
+    ~Person();
+};
+----------------------------------------------
+
+//請撰寫一個程式提供為定義之成員函數程式碼。請完成class Person，另main.cpp可以執行。

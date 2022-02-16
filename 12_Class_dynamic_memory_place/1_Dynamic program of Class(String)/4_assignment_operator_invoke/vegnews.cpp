@@ -26,11 +26,11 @@ int main()
                                                                   //所以copy constructor和 指定運算子 都要 num_string++
         cout << "headline2: " << headline2 << "   no more strang string" << endl;
         cout << "Initialize one object to another:\n";
-        StringBad sailor = sports;     //利用copy constructor
+        StringBad sailor = sports;     //利用copy constructor，也有可能是operator=()
         cout << "sailor: " << sailor << endl;
         cout << "Assign one object to another:\n";
         StringBad knot;        //有建構自己的 記憶體空間 ，所以已經有num_string ++           
-        knot = headline1;      //只複製內容 ， 並沒有完全複製過去 ， 以避免 knot 與 headline 參考同一個位址的物件。 
+        knot = headline1;      //已經配置好自己的記憶體空間了，所以只複製內容 ， 並沒有完全複製過去 ， 以避免 knot 與 headline 參考同一個位址的物件。 
         cout << "knot: " << knot << endl; 
         cout << "Exiting the block.\n";
     }
